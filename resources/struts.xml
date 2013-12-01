@@ -15,7 +15,7 @@
 		
 		<!-- 测试用的action，当与Spring整合后，class属性写的就是Spring中bean的名称 -->
 		<action name="test" class="userAction">
-			<result name="success">/test.jsp</result>
+			<result name="success">/WEB-INF/jsp/index.jsp</result>
 		</action>
 
 
