@@ -16,8 +16,32 @@ public class User {
 	private String location;
 	private Date birthday;
 	private String email;
-	private Set <UsedGood> usedGoods = new HashSet<UsedGood>();
-	private Set<User> friends = new HashSet<User>();
+	private Set<UsedGood> usedGoods = new HashSet<UsedGood>();
+
+	// private Set<User> friends = new HashSet<User>();
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
 
 	public String getUserName() {
 		return userName;
@@ -75,30 +99,6 @@ public class User {
 		this.birthday = birthday;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getAge() {
-		return age;
-	}
-
-	public void setAge(String age) {
-		this.age = age;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -107,19 +107,11 @@ public class User {
 		this.email = email;
 	}
 
-	public Set<User> getFriends() {
-		return friends;
-	}
-
-	public void setFriends(Set<User> friends) {
-		this.friends = friends;
-	}
-
-	public Set <UsedGood> getUsedGoods() {
+	public Set<UsedGood> getUsedGoods() {
 		return usedGoods;
 	}
 
-	public void setUsedGoods(Set <UsedGood> usedGoods) {
+	public void setUsedGoods(Set<UsedGood> usedGoods) {
 		this.usedGoods = usedGoods;
 	}
 

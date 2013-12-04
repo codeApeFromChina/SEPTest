@@ -15,7 +15,6 @@ public class UserAction extends ActionSupport{
 	@Resource
 	private ServiceTest serviceTest;
 	
-	
 	public String execute ()
 	{
 		System.out.println("struts OK!!");

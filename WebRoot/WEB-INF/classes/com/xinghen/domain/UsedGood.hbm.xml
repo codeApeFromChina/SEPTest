@@ -13,14 +13,14 @@
 		<property name="type"></property>		
 		<property name="price"></property>
 		<property name="tradeType"></property>
-		<property name="number"></property>
+		<property name="description"></property>
 		<property name="tradeLocation"></property>
-		<property name="beginDate"></property>
-		<property name="endDate"></property>
-		
+		<property name="uploadDate"></property>
+
 		<many-to-one name="user" column="userId" class = "User"></many-to-one>
+
 		
-		<set name="images" >
+		<set name="images" cascade="all" >
 			<key column="usedGoodId"></key>
 			<one-to-many class = "Image"/>
 		</set>

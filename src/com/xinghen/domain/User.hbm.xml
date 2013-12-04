@@ -7,9 +7,9 @@
 
 	<class name="User" table="user">
 		<id name="id">
-            <generator class="native"/>
+			<generator class="native" />
 		</id>
-		<property name="name"/>
+		<property name="name" />
 		<property name="age"></property>
 		<property name="userName"></property>
 		<property name="passWord"></property>
@@ -19,12 +19,12 @@
 		<property name="location"></property>
 		<property name="birthday"></property>
 		<property name="email"></property>
-		
-		<set name="usedGoods" >
+
+		<set name="usedGoods">
 			<key column="userId"></key>
-			<one-to-many class="UsedGood"/>
+			<one-to-many class="UsedGood" />
 		</set>
-		
+
 	</class>
-	
+
 </hibernate-mapping>

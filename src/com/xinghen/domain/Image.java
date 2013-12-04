@@ -9,11 +9,15 @@ public class Image {
 	private Date uploadDate;
 	private UsedGood usedGood;
 	private String imageType ;
-	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	public String getImageName() {
 		return imageName;
 	}
-	
 	public void setImageName(String imageName) {
 		this.imageName = imageName;
 	}
@@ -29,22 +33,14 @@ public class Image {
 	public void setUsedGood(UsedGood usedGood) {
 		this.usedGood = usedGood;
 	}
-
 	public String getImageType() {
 		return imageType;
 	}
-
 	public void setImageType(String imageType) {
 		this.imageType = imageType;
 	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
+	
+	
 	
 	
 	
