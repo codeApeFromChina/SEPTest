@@ -41,10 +41,12 @@ public class MyIOUtils {
 	 */
 	public void inputImage(String path, List <File> images, List<String> imagesName, UsedGood usedGood) throws Exception {
 
-		String imgPath = "/uploadImag/";
+		String imgPath = "/images/";
 		Image img = new Image();
 		Date date = new Date ();
 		usedGood.setUploadDate(date);
+		
+		System.out.println(path);
 
 		for (int i = 0; i < images.size(); ++i) {
 

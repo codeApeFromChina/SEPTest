@@ -6,19 +6,6 @@
 			<table class = "table well">
 
 
-				<tr>
-				<div class="input-group input-group-lg">
-					<td><span class="input-group-addon">id</span> </td>
-					<td>
-					<s:textfield cssClass="form-control" name="usedGood.id"></s:textfield>
-					</td>
-				</div>
-				</tr>
-
-				<tr>
-					<td>number</td>
-					<td><s:textfield name="number"></s:textfield></td>
-				</tr>
 
 				<tr>
 					<td>交易地点</td>

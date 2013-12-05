@@ -22,7 +22,7 @@
 		<!-- 测试modelDriven用的action -->
 		<action name="T_*" class="testAction" method="{1}">
 			<result name="success">/WEB-INF/jsp/test.jsp</result>
-			<result name="test">/WEB-INF/jsp/usedGoodsAction/input.jsp</result>
+			<result name="test">/WEB-INF/jsp/test_success.jsp</result>
 		</action>
 
 
@@ -31,7 +31,6 @@
 		<action name="goodAction_*" class="goodAction" method="{1}">
 
 			<result name="save">/WEB-INF/jsp/usedGoodsAction/addUsedGood.jsp</result>
-			<result name="input">/WEB-INF/jsp/usedGoodsAction/input.jsp</result>
 			<result name="toUploadResult">/WEB-INF/jsp/usedGoodsAction/uploadGoodResult.jsp</result>
 
 			<!-- 上传文件拦截器 -->

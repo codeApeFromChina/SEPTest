@@ -1,5 +1,9 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@taglib uri="/struts-tags" prefix="s"%>
+<%
+
+ %>
+
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <%-- <% --%>
@@ -16,9 +20,14 @@
 	<!-- Start: MAIN CONTENT -->
 	<div class="content">
 	
-	<s:param name = "name" value = "#usedGood.name"></s:param>		
-
-
+	<s:property value = "usedGood.tradeLocation"/>
+	
+	<s:iterator value="usedGood.images" id = "img">
+		<p>====</p>
+		<s:property value = "#img.imageName" />
+		<img src="<s:url value="/images/%{#img.imageName}"/>" />
+	</s:iterator>
+	
 	</div>
 	<!-- End: MAIN CONTENT -->
 	

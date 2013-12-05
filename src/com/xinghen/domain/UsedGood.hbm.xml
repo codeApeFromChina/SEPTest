@@ -20,7 +20,7 @@
 		<many-to-one name="user" column="userId" class = "User"></many-to-one>
 
 		
-		<set name="images" cascade="all" >
+		<set name="images" cascade="all" lazy="false" >
 			<key column="usedGoodId"></key>
 			<one-to-many class = "Image"/>
 		</set>
