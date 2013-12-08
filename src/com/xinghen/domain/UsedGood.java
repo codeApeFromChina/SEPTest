@@ -16,6 +16,10 @@ public class UsedGood {
 	private Date uploadDate;
 	private User user = new User();
 	private Set<Image> images = new HashSet<Image>();
+	
+	
+	
+	
 	public Long getId() {
 		return id;
 	}

@@ -31,7 +31,7 @@
 		<action name="goodAction_*" class="goodAction" method="{1}">
 
 			<result name="save">/WEB-INF/jsp/usedGoodsAction/addUsedGood.jsp</result>
-			<result name="toUploadResult">/WEB-INF/jsp/usedGoodsAction/uploadGoodResult.jsp</result>
+			<result name="toShowUI">/WEB-INF/jsp/usedGoodsAction/toShowUI.jsp</result>
 
 			<!-- 上传文件拦截器 -->
 			<interceptor-ref name="fileUpload">

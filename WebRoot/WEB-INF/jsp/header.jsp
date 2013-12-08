@@ -14,6 +14,7 @@
     <link href="${pageContext.request.contextPath}/css/font-awesome-ie7.css" rel="stylesheet">
     <!-- Bootbusiness theme -->
     <link href="${pageContext.request.contextPath}/css/boot-business.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/MyCss.css" rel="stylesheet">
   </head>
   <body>
     <!-- Start: HEADER -->

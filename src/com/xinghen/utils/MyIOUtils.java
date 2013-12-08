@@ -42,13 +42,14 @@ public class MyIOUtils {
 	public void inputImage(String path, List <File> images, List<String> imagesName, UsedGood usedGood) throws Exception {
 
 		String imgPath = "/images/";
-		Image img = new Image();
+	
 		Date date = new Date ();
 		usedGood.setUploadDate(date);
 		
 		System.out.println(path);
 
 		for (int i = 0; i < images.size(); ++i) {
+			Image img = new Image();
 
 			InputStream is = new FileInputStream( images.get(i));
 
@@ -91,6 +92,8 @@ public class MyIOUtils {
 
 			os.close();
 		}
+		System.out.println(usedGood.getImages().size());
+		System.out.println("----------------------------->>>");
 
 	}
 

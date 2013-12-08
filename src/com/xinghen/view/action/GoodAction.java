@@ -61,8 +61,9 @@ public class GoodAction extends ActionSupport // implements
 
 		String path = ServletActionContext.getServletContext().getRealPath("/");
 		List<String> imagesName = getImagesFileName();
-		System.out.println(imagesName.get(0));
+//		System.out.println(imagesName.get(0));
 //		System.out.println("==========================>>>>");
+		
 
 		MyIOUtils.getInstance().inputImage(path, images, imagesName,
 				getUsedGood());
@@ -71,7 +72,10 @@ public class GoodAction extends ActionSupport // implements
 		tUser.setId(1l);
 		usedGood.setUser(tUser);
 		usedGoodService.save(usedGood);
-
+		
+		System.out.println(usedGood.getImages().size());
+		System.out.println("************************>>>>");
+		
 		System.out.println(usedGood.getId());
 
 		usedGood = usedGoodService.getById(usedGood.getId());
@@ -85,7 +89,7 @@ public class GoodAction extends ActionSupport // implements
 			System.out.println(((Image) it.next()).getImageName());
 		}
 
-		return "toUploadResult";
+		return "toShowUI";
 	}
 
 	/**
@@ -96,7 +100,7 @@ public class GoodAction extends ActionSupport // implements
 	 */
 	public String showGoodUI() throws Exception {
 
-		return "list";
+		return "toShowUI";
 	}
 
 	// ===================================================================================
