@@ -16,7 +16,7 @@ import com.xinghen.domain.TestBean;
 @Controller
 @Scope("prototype")
 //implements ModelDriven<TestBean>
-public class TestAction extends ActionSupport implements ModelDriven<TestBean>   {
+public class TestAction extends ActionSupport    {
 //	int age = 1;
 //	String name = "11";
 //	Float price = 111f;
@@ -47,9 +47,15 @@ public class TestAction extends ActionSupport implements ModelDriven<TestBean>  
 //		this.price = price;
 //	}
 
+	public TestBean getTestBean() {
+		return testBean;
+	}
+
+	public void setTestBean(TestBean testBean) {
+		this.testBean = testBean;
+	}
+
 	TestBean testBean = new TestBean();
-	
-	
 
 	public String exec (){
 //		List<String> role = new ArrayList<String> ();
@@ -64,14 +70,19 @@ public class TestAction extends ActionSupport implements ModelDriven<TestBean>  
 		
 		
 //		ActionContext.getContext().put("test2", testBean);
-//		ActionContext.getContext().put("roleList", role);
+		
+		List beanList = new ArrayList<String> ();
+		beanList.add("二手商品");
+		beanList.add("二手书籍");
+		ActionContext.getContext().put("beanList", beanList);
 		
 		return "success";
 	}
 	
 	public String test (){
 //		ActionContext.getContext().put("test", testBean);
-		System.out.println(testBean.getName());
+		System.out.println(">>>>>>>>>>>>>>>");
+		System.out.println("====" + testBean.getName());
 		System.out.println(testBean.getPrice());
 		
 		return "test";

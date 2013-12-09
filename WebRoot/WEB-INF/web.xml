@@ -27,6 +27,7 @@
 
 	<display-name></display-name>
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+<!-- 		设置一个不存在的首页，让tomcat去访问默认页 -->
+		<welcome-file>ttt.jsp</welcome-file>
 	</welcome-file-list>
 </web-app>

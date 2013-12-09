@@ -7,6 +7,7 @@ import java.util.Set;
 public class UsedGood {
 
 	private Long id;
+	private Long displayNum = 0l;
 	private String name;
 	private String type;
 	private Float price;
@@ -15,11 +16,23 @@ public class UsedGood {
 	private String tradeLocation;
 	private Date uploadDate;
 	private User user = new User();
+	
+	private Image firstImage ;
 	private Set<Image> images = new HashSet<Image>();
 	
 	
-	
-	
+	public Image getFirstImage() {
+		return firstImage;
+	}
+	public void setFirstImage(Image firstImage) {
+		this.firstImage = firstImage;
+	}
+	public Long getDisplayNum() {
+		return displayNum;
+	}
+	public void setDisplayNum(Long displayNum) {
+		this.displayNum = displayNum;
+	}
 	public Long getId() {
 		return id;
 	}

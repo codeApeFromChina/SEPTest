@@ -21,6 +21,7 @@
 	<mapping resource="com/xinghen/domain/Image.hbm.xml" />
 	<mapping resource="com/xinghen/domain/UsedGood.hbm.xml" />
 	<mapping resource="com/xinghen/domain/User.hbm.xml" />
+	<mapping resource="com/xinghen/domain/FirstImage.hbm.xml" />
 
 
 

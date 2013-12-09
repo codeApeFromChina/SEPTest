@@ -13,7 +13,7 @@ public class BaseDaoImp<T> implements BaseDao<T>{
 
 	@Resource
 	private SessionFactory sessionFactory ;
-	private Class <T> clazz;
+	protected Class <T> clazz;
 	
 	public BaseDaoImp (){
 		

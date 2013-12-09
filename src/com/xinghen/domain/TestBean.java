@@ -4,6 +4,7 @@ public class TestBean {
 	private String name;
 	private Float price;
 	private Integer age;
+	
 	public String getName() {
 		return name;
 	}

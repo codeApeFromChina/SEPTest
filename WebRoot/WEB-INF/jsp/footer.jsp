@@ -1,3 +1,4 @@
+	<%@ page pageEncoding = "utf-8" %>
 	<!-- Start: FOOTER -->
 	<footer>
 		<div class="container">

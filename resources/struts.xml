@@ -7,12 +7,15 @@
 	<!-- 配置为开发模式 -->
 	<constant name="struts.devMode" value="true" />
 	<!-- 配置扩展名为action -->
-	<constant name="struts.action.extension" value="action" />
-
-
+<!-- 	<constant name="struts.action.extension" value="action" /> -->
 
 	<package name="default" namespace="/" extends="struts-default">
 
+
+<!-- 		配置默认访问页 -->
+		<default-action-ref name="home_page" />
+		
+		
 		<!-- 测试用的action，当与Spring整合后，class属性写的就是Spring中bean的名称 -->
 		<action name="test" class="userAction">
 			<result name="success">/WEB-INF/jsp/contact_us.jsp</result>
@@ -25,9 +28,16 @@
 			<result name="test">/WEB-INF/jsp/test_success.jsp</result>
 		</action>
 
+<!-- ===========================================================================================-->
+
+
+		<action name="home_page" class="indexAction" method = "homePageUI">
+			<result name="homePageUI">/WEB-INF/jsp/home_page.jsp</result>
+		</action>
+
 
 		<!-- 产品相关的action -->
-		
+
 		<action name="goodAction_*" class="goodAction" method="{1}">
 
 			<result name="save">/WEB-INF/jsp/usedGoodsAction/addUsedGood.jsp</result>

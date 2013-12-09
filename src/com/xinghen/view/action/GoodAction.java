@@ -1,6 +1,7 @@
 package com.xinghen.view.action;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -35,6 +36,8 @@ public class GoodAction extends ActionSupport // implements
 
 	private List<String> imagesContentType;
 
+	private List<String> typeList = new ArrayList<String>();
+	
 	public UsedGood getModel() {
 		return usedGood;
 	}
@@ -47,6 +50,8 @@ public class GoodAction extends ActionSupport // implements
 	 */
 	public String saveUI() throws Exception {
 
+		initTypeList();
+		ActionContext.getContext().put("typeList", typeList);
 		System.out.println("show images UI ~~~");
 		return "save";
 	}
@@ -105,8 +110,24 @@ public class GoodAction extends ActionSupport // implements
 
 	// ===================================================================================
 
+
+	public void initTypeList (){
+		
+		typeList.add("二手商品");
+		typeList.add("二手书籍");
+		
+	}
+	
 	public UsedGood getUsedGood() {
 		return usedGood;
+	}
+
+	public List<String> getTypeList() {
+		return typeList;
+	}
+
+	public void setTypeList(List<String> typeList) {
+		this.typeList = typeList;
 	}
 
 	public void setUsedGood(UsedGood usedGood) {

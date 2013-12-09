@@ -1,3 +1,4 @@
+ 	<%@ page pageEncoding="UTF-8"%>
  	<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +24,7 @@
       <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
           <div class="container">
-            <a href="index.html" class="brand brand-bootbus">Bootbusiness</a>
+            <a href="" class="brand brand-bootbus">second-hand transaction</a>
             <!-- Below button used for responsive navigation -->
             <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
               <span class="icon-bar"></span>

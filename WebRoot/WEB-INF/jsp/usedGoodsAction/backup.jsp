@@ -1,47 +1,133 @@
-	<s:form role = "form" action="goodAction_addGood" theme="simple"
-			enctype="multipart/form-data" method = "post">
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib uri="/struts-tags" prefix="s"%>
 
-			<div class = "form-group">
+	<!-- Start: PRODUCT LIST -->
+		<div class="container">
 
-			<table class = "table well">
-
-
-
-				<tr>
-					<td>交易地点</td>
-					<td><s:textfield name="usedGood.tradeLocation"></s:textfield></td>
-				</tr>
-
-				<tr>
-					<td>货物名称</td>
-					<td><s:textfield name="usedGood.name"></s:textfield></td>
-				</tr>
-				<tr>
-					<td>货物类型</td>
-					<td><s:textfield name="usedGood.type"></s:textfield></td>
-				</tr>
-				<tr>
-					<td>转手价格</td>
-					<td><s:textfield name="usedGood.price"></s:textfield></td>
-				</tr>
-				<tr>
-					<td>交易类型</td>
-					<td><s:textfield name="usedGood.tradeType"></s:textfield></td>
-				</tr>
-				<tr>
-					<td>商品简介</td>
-					<td><s:textarea name="usedGood.description"></s:textarea></td>
-				</tr>
-				<tr>
-					<td>file</td>
-					<td id="more"><s:file name="images"></s:file> <input
-						type="button" value="Add More.." onclick="addMore()">
-					</td>
-				</tr>
-				<tr>
-					<td><s:submit value=" submit "></s:submit></td>
-					<td><s:reset value=" reset "></s:reset></td>
-				</tr>
-			</table>
+			<!-- second_good_list start -->
+			<div class="page-header">
+				<h2>二手物品</h2>
 			</div>
-		</s:form>
+			<div class="row-fluid">
+				<ul class="thumbnails">
+					<!-- second_good_list start -->
+					<li class="span4">
+						<div class="thumbnail">
+							<img src="img/placeholder-360x200.jpg" alt="product name">
+							<div class="caption">
+								<h3>Product name</h3>
+								<p>Few attractive words about your product.Few attractive
+									words about your product. Few attractive words about your
+									product.Few attractive words about your product.</p>
+							</div>
+							<div class="widget-footer">
+								<p>
+									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
+										href="product.html" class="btn">Read more</a>
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="span4">
+						<div class="thumbnail">
+							<img src="img/placeholder-360x200.jpg" alt="product name">
+							<div class="caption">
+								<h3>Product name</h3>
+								<p>Few attractive words about your product.Few attractive
+									words about your product. Few attractive words about your
+									product.Few attractive words about your product.</p>
+							</div>
+							<div class="widget-footer">
+								<p>
+									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
+										href="product.html" class="btn">Read more</a>
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="span4">
+						<div class="thumbnail">
+							<img src="img/placeholder-360x200.jpg" alt="product name">
+							<div class="caption">
+								<h3>Product name</h3>
+								<p>Few attractive words about your product.Few attractive
+									words about your product. Few attractive words about your
+									product.Few attractive words about your product.</p>
+							</div>
+							<div class="widget-footer">
+								<p>
+									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
+										href="product.html" class="btn">Read more</a>
+								</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+
+			<!-- second_good_list end -->
+
+
+			<!-- second_book_list start -->
+			<div class="page-header">
+
+				<h2>二手书籍</h2>
+			</div>
+			<div class="row-fluid">
+				<ul class="thumbnails">
+					<li class="span4">
+						<div class="thumbnail">
+							<img src="img/placeholder-360x200.jpg" alt="product name">
+							<div class="caption">
+								<h3>Service title</h3>
+								<p>Few attractive words about your service.Few attractive
+									words about your service. Few attractive words about your
+									service.Few attractive words about your service.</p>
+							</div>
+							<div class="widget-footer">
+								<p>
+									<a href="#" class="btn btn-primary">Try for free</a>&nbsp; <a
+										href="product.html" class="btn">Read more</a>
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="span4">
+						<div class="thumbnail">
+							<img src="img/placeholder-360x200.jpg" alt="product name">
+							<div class="caption">
+								<h3>Service title</h3>
+								<p>Few attractive words about your service.Few attractive
+									words about your service. Few attractive words about your
+									service.Few attractive words about your service.</p>
+							</div>
+							<div class="widget-footer">
+								<p>
+									<a href="#" class="btn btn-primary">Try for free</a>&nbsp; <a
+										href="product.html" class="btn">Read more</a>
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="span4">
+						<div class="thumbnail">
+							<img src="img/placeholder-360x200.jpg" alt="product name">
+							<div class="caption">
+								<h3>Service title</h3>
+								<p>Few attractive words about your service.Few attractive
+									words about your service. Few attractive words about your
+									service.Few attractive words about your service.</p>
+							</div>
+							<div class="widget-footer">
+								<p>
+									<a href="#" class="btn btn-primary">Try for free</a>&nbsp; <a
+										href="product.html" class="btn">Read more</a>
+								</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- second_book_list end -->
