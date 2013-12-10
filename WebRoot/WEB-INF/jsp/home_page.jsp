@@ -117,7 +117,7 @@
 						<li class="span4">
 							<div class="thumbnail">
 								<s:property value = "usedGood.name"/>
-								<img src="<s:url value="/images/%{#usedGood.images.imageName}"/>"
+								<img src="<s:url value="/images/%{#usedGood.firstImage.imageName}"/>"
 									width=700px />
 								<div class="caption">
 									<h3>Product name</h3>

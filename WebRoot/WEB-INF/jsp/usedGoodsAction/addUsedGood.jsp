@@ -43,31 +43,31 @@
 
 					<tr>
 						<td>交易地点</td>
-						<td><s:textfield name="usedGood.tradeLocation"></s:textfield>
+						<td><s:textfield name="usedGood.tradeLocation" value = "青岛大学"></s:textfield>
 						</td>
 					</tr>
 
 					<tr>
 						<td>货物名称</td>
-						<td><s:textfield name="usedGood.name"></s:textfield></td>
+						<td><s:textfield name="usedGood.name" value = "一件商品"></s:textfield></td>
 					</tr>
 					<tr>
 						<td>货物类型</td>
 						<td><s:select name="usedGood.type" list="#typeList"
-								headerKey="" headerValue=""></s:select></td>
+								headerKey="" headerValue="二手商品"></s:select></td>
 					</tr>
 					<tr>
 						<td>转手价格</td>
-						<td><s:textfield name="usedGood.price"></s:textfield></td>
+						<td><s:textfield name="usedGood.price" value = "100"></s:textfield></td>
 					</tr>
 					<tr>
 						<td>交易类型</td>
-						<td><s:textfield name="usedGood.tradeType"></s:textfield>
+						<td><s:textfield name="usedGood.tradeType" value = "当面交易"></s:textfield>
 						</td>
 					</tr>
 					<tr>
 						<td>商品简介</td>
-						<td><s:textarea name="usedGood.description"></s:textarea>
+						<td><s:textarea name="usedGood.description" value = "这个东西还不错～"></s:textarea>
 						</td>
 					</tr>
 					<tr>

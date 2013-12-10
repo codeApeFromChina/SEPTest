@@ -5,7 +5,7 @@
 
 <hibernate-mapping package="com.xinghen.domain">
 
-	<class name="FirstImage" table="first_image">
+	<class name="FirstImage" table="firstImage">
 	
 		<id name="id">
             <generator class="native"/>
@@ -15,7 +15,11 @@
 		<property name="uploadDate"></property>
 		<property name="imageType"></property>
 		
-		<many-to-one name="usedGood" column="usedGoodId" class = "UsedGood" unique="true"></many-to-one>
+<!-- 		<many-to-one name="usedGood" column="usedGoodId" class = "UsedGood" unique="true"></many-to-one> -->
+
+		<one-to-one name="usedGood" class = "UsedGood" property-ref="firstImage" ></one-to-one>
+		
+<!-- 		<one-to-one name="usedGood" class = "UsedGood" property-ref="firstImage"></one-to-one> -->
 		
 	</class>
 	

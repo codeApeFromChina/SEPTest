@@ -2,13 +2,15 @@ package com.xinghen.domain;
 
 import java.util.Date;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 public class Image {
 
 	private Long id;
 	private String imageName;
 	private Date uploadDate;
 	private UsedGood usedGood;
-	private String imageType ;
+	private Boolean imageType ;
 	public Long getId() {
 		return id;
 	}
@@ -33,14 +35,13 @@ public class Image {
 	public void setUsedGood(UsedGood usedGood) {
 		this.usedGood = usedGood;
 	}
-	public String getImageType() {
+	public Boolean getImageType() {
 		return imageType;
 	}
-	public void setImageType(String imageType) {
+	public void setImageType(Boolean imageType) {
 		this.imageType = imageType;
 	}
-	
-	
+
 	
 	
 	

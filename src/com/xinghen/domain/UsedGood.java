@@ -17,27 +17,35 @@ public class UsedGood {
 	private Date uploadDate;
 	private User user = new User();
 	
-	private Image firstImage ;
+	private Image firstImage;
 	private Set<Image> images = new HashSet<Image>();
 	
-	
-	public Image getFirstImage() {
-		return firstImage;
+	public UsedGood() {
+		super();
 	}
-	public void setFirstImage(Image firstImage) {
+	public UsedGood(Long id, String name, Float price, String description,
+			FirstImage firstImage) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.description = description;
 		this.firstImage = firstImage;
+	}
+	
+	
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 	public Long getDisplayNum() {
 		return displayNum;
 	}
 	public void setDisplayNum(Long displayNum) {
 		this.displayNum = displayNum;
-	}
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
 	}
 	public String getName() {
 		return name;
@@ -87,12 +95,20 @@ public class UsedGood {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	
+	public Image getFirstImage() {
+		return firstImage;
+	}
+	public void setFirstImage (Image firstImage) {
+		this.firstImage = firstImage;
+	}
 	public Set<Image> getImages() {
 		return images;
 	}
 	public void setImages(Set<Image> images) {
 		this.images = images;
 	}
+	
 
 	
 

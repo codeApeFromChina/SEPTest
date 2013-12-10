@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.xinghen.domain.UsedGood;
 import com.xinghen.service.IndexService;
 
 
@@ -19,7 +20,7 @@ public class IndexAction extends ActionSupport {
 	
 	@Resource
 	private IndexService indexService ;
-	private List usedGoodList = new ArrayList<String> ();
+	private List usedGoodList = new ArrayList<UsedGood> ();
 	
 	public String homePageUI (){
 		
