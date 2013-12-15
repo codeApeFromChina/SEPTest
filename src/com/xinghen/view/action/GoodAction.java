@@ -29,7 +29,7 @@ public class GoodAction extends ActionSupport // implements
 
 	@Resource
 	private UsedGoodService usedGoodService;
-
+	
 	private List<File> images;
 
 	private List<String> imagesFileName;
@@ -77,6 +77,7 @@ public class GoodAction extends ActionSupport // implements
 		tUser.setId(1l);
 		usedGood.setUser(tUser);
 		usedGoodService.save(usedGood);
+		
 		
 		System.out.println(usedGood.getImages().size());
 		System.out.println("************************>>>>");

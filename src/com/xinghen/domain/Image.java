@@ -11,6 +11,21 @@ public class Image {
 	private Date uploadDate;
 	private UsedGood usedGood;
 	private Boolean imageType ;
+	
+	
+	
+	
+	
+	public Image() {
+		super();
+	}
+	public Image(Image img) {
+		setId(img.getId());
+		setImageName(img.getImageName());
+		setUploadDate(img.getUploadDate());
+		setUsedGood(img.getUsedGood());
+		setImageType(img.getImageType());
+	}
 	public Long getId() {
 		return id;
 	}

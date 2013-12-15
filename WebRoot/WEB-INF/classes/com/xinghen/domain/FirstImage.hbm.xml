@@ -17,7 +17,9 @@
 		
 <!-- 		<many-to-one name="usedGood" column="usedGoodId" class = "UsedGood" unique="true"></many-to-one> -->
 
-		<one-to-one name="usedGood" class = "UsedGood" property-ref="firstImage" ></one-to-one>
+		<many-to-one name="usedGood" class ="UsedGood" column="usedGoodId" unique="true" cascade="all" ></many-to-one>
+		
+<!-- 		<one-to-one name="usedGood" class = "UsedGood" property-ref="firstImage" ></one-to-one> -->
 		
 <!-- 		<one-to-one name="usedGood" class = "UsedGood" property-ref="firstImage"></one-to-one> -->
 		

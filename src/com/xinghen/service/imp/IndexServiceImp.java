@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.xinghen.dao.UsedGoodDao;
+import com.xinghen.domain.DisplayIterm;
 import com.xinghen.domain.UsedGood;
 import com.xinghen.service.IndexService;
 
@@ -22,7 +23,7 @@ public class IndexServiceImp implements IndexService{
 	
 	public List findByType(String type) {
 		
-		List<UsedGood> usedGoodList = usedGoodDao.findByType(type);
+		List<DisplayIterm> usedGoodList = usedGoodDao.findByType(type);
 		
 		System.out.println(usedGoodList);
 		

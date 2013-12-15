@@ -57,7 +57,7 @@ public class MyIOUtils {
 
 			for (int i = 0; i < images.size(); ++i) {
 				Image img = new Image();
-
+				img.setUsedGood(usedGood);
 				is = new FileInputStream(images.get(i));
 
 				File fileTmp = new File(path + imgPath);
@@ -70,10 +70,12 @@ public class MyIOUtils {
 						+ imagesName.get(i).split("\\.")[1];
 
 				img.setImageName(imgName);
+
 				img.setUploadDate(date);
 				if (i == 0) {
 					img.setImageType(true);
-					usedGood.setFirstImage(img);
+//					Image tImg = new Image (img);
+//					usedGood.setFirstImage(tImg);
 				} else {
 					img.setImageType(false);
 				}

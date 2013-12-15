@@ -21,12 +21,14 @@
 		<!-- <one-to-one name="firstImage" class="FirstImage"/> -->
 		<!-- <one-to-one name="firstImage" cascade="all" class="FirstImage" property-ref="usedGood"/> -->
 
-		<many-to-one name="firstImage" column="firstImageId" cascade="all" class="FirstImage" unique="true"></many-to-one>
+<!-- 		<one-to-one name="firstImage" class = "FirstImage" property-ref="usedGood" ></one-to-one> -->
+
+<!--  		<many-to-one name="firstImage" column="firstImageId" cascade="all" class="FirstImage" unique="true"></many-to-one>  -->
 
 
 		<many-to-one name="user" column="userId" class="User"></many-to-one>
 
-		<set name="images" cascade="all" lazy="false">
+		<set name="images" cascade="all"  lazy="false">
 			<key column="usedGoodId"></key>
 			<one-to-many class="Image" />
 		</set>
