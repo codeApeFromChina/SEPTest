@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 import com.xinghen.domain.Image;
 import com.xinghen.domain.UsedGood;
 import com.xinghen.domain.User;
@@ -22,21 +23,22 @@ import com.xinghen.utils.MyIOUtils;
 
 @Controller
 @Scope("prototype")
-public class GoodAction extends ActionSupport // implements
-// ModelDriven<UsedGood>
+public class GoodAction extends ActionSupport  implements ModelDriven<UsedGood>
 {
-	private UsedGood usedGood = new UsedGood();
-
 	@Resource
 	private UsedGoodService usedGoodService;
 	
-	private List<File> images;
+	private UsedGood usedGood = new UsedGood();
 
-	private List<String> imagesFileName;
+	private List<File> imageList;
 
-	private List<String> imagesContentType;
+	private List<String> imageListFileName;
+
+	private List<String> imageListContentType;
 
 	private List<String> typeList = new ArrayList<String>();
+	
+	
 	
 	public UsedGood getModel() {
 		return usedGood;
@@ -65,36 +67,27 @@ public class GoodAction extends ActionSupport // implements
 	public String addGood() throws Exception {
 
 		String path = ServletActionContext.getServletContext().getRealPath("/");
-		List<String> imagesName = getImagesFileName();
-//		System.out.println(imagesName.get(0));
-//		System.out.println("==========================>>>>");
-		
+		List<String> imagesName = getImageListFileName();
 
-		MyIOUtils.getInstance().inputImage(path, images, imagesName,
+		MyIOUtils.getInstance().inputImage(path, imageList, imagesName,
 				getUsedGood());
-		//
+		
 		User tUser = new User();
 		tUser.setId(1l);
 		usedGood.setUser(tUser);
 		usedGoodService.save(usedGood);
 		
-		
-		System.out.println(usedGood.getImages().size());
-		System.out.println("************************>>>>");
-		
-		System.out.println(usedGood.getId());
-
 		usedGood = usedGoodService.getById(usedGood.getId());
-		ActionContext.getContext().put("usedGood", usedGood);
-		System.out.println("==============================>>>");
+	
 		Set imageSet = usedGood.getImages();
-		Iterator it =imageSet.iterator();
 		
-		while (it.hasNext())
-		{
-			System.out.println(((Image) it.next()).getImageName());
-		}
-
+//==================    輸出文件列表的每個文件名
+//		Iterator it =imageSet.iterator();
+//		
+//		while (it.hasNext())
+//		{
+//			System.out.println(((Image) it.next()).getImageName());
+//		}
 		return "toShowUI";
 	}
 
@@ -135,28 +128,29 @@ public class GoodAction extends ActionSupport // implements
 		this.usedGood = usedGood;
 	}
 
-	public List<File> getImages() {
-		return images;
+	public List<File> getImageList() {
+		return imageList;
 	}
 
-	public void setImages(List<File> images) {
-		this.images = images;
+	public void setImageList(List<File> imageList) {
+		this.imageList = imageList;
 	}
 
-	public List<String> getImagesFileName() {
-		return imagesFileName;
+	public List<String> getImageListFileName() {
+		return imageListFileName;
 	}
 
-	public void setImagesFileName(List<String> imagesFileName) {
-		this.imagesFileName = imagesFileName;
+	public void setImageListFileName(List<String> imageListFileName) {
+		this.imageListFileName = imageListFileName;
 	}
 
-	public List<String> getImagesContentType() {
-		return imagesContentType;
+	public List<String> getImageListContentType() {
+		return imageListContentType;
 	}
 
-	public void setImagesContentType(List<String> imagesContentType) {
-		this.imagesContentType = imagesContentType;
+	public void setImageListContentType(List<String> imageListContentType) {
+		this.imageListContentType = imageListContentType;
 	}
+
 
 }

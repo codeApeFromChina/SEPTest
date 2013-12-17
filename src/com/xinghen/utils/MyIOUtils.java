@@ -66,8 +66,7 @@ public class MyIOUtils {
 						System.out.println("create file dirc ~~~");
 					}
 				}
-				String imgName = System.currentTimeMillis() + "."
-						+ imagesName.get(i).split("\\.")[1];
+				String imgName = System.currentTimeMillis() + "." + imagesName.get(i).split("\\.")[1];
 
 				img.setImageName(imgName);
 
