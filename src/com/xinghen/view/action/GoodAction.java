@@ -2,7 +2,6 @@ package com.xinghen.view.action;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -15,7 +14,6 @@ import org.springframework.stereotype.Controller;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
-import com.xinghen.domain.Image;
 import com.xinghen.domain.UsedGood;
 import com.xinghen.domain.User;
 import com.xinghen.service.UsedGoodService;
@@ -37,7 +35,6 @@ public class GoodAction extends ActionSupport  implements ModelDriven<UsedGood>
 	private List<String> imageListContentType;
 
 	private List<String> typeList = new ArrayList<String>();
-	
 	
 	
 	public UsedGood getModel() {

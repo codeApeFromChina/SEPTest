@@ -4,31 +4,53 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import old_codes.UsedGoodDao;
+
+import org.hibernate.Hibernate;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.xinghen.dao.UsedGoodDao;
+import com.xinghen.base.BaseServiceImp;
 import com.xinghen.domain.DisplayIterm;
 import com.xinghen.domain.UsedGood;
 import com.xinghen.service.IndexService;
 
 @Service
-@Transactional
-public class IndexServiceImp implements IndexService{
+@SuppressWarnings("deprecation")
+public class IndexServiceImp extends BaseServiceImp<UsedGood> implements
+		IndexService {
 
-	@Resource
-	private UsedGoodDao  usedGoodDao ;
-	
-	public List findByType(String type) {
-		
-		List<DisplayIterm> usedGoodList = usedGoodDao.findByType(type);
-		
-		System.out.println(usedGoodList);
-		
-		return usedGoodList;
+	private String sql;
+
+	public List<DisplayIterm> findByType(String type) {
+		int start = 0;
+		int limit = 5;
+
+		sql = "select ug.id, ug.name, ug.description, ug.price, img.imageName from "
+				+ "usedGood ug join image img on img.usedGOodId = ug.id"
+				+ " where ug.type = :type and img.imageType = 1";
+		Session session = getSession();
+
+		Query query = getSession().createSQLQuery(sql)
+				.addScalar("id", Hibernate.LONG)
+				.addScalar("name", Hibernate.STRING)
+				.addScalar("description", Hibernate.STRING)
+				.addScalar("price", Hibernate.FLOAT)
+				.addScalar("imageName", Hibernate.STRING);
+
+		query.setParameter("type", type);
+		query.setResultTransformer(Transformers.aliasToBean(DisplayIterm.class));
+
+		List<DisplayIterm> displayItermList = query.list();
+
+		System.out.println(displayItermList.toString());
+
+		return displayItermList;
 	}
-	
 
 }

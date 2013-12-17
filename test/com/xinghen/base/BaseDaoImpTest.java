@@ -2,12 +2,13 @@ package com.xinghen.base;
 
 import javax.management.relation.Role;
 
+import old_codes.RoleDao;
+import old_codes.RoleDaoImp;
+import old_codes.UserDao;
+import old_codes.UserDaoImp;
+
 import org.junit.Test;
 
-import com.xinghen.dao.RoleDao;
-import com.xinghen.dao.UserDao;
-import com.xinghen.dao.imp.RoleDaoImp;
-import com.xinghen.dao.imp.UserDaoImp;
 import com.xinghen.domain.User;
 
 public class BaseDaoImpTest {

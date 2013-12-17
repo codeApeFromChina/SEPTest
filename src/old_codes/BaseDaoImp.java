@@ -1,4 +1,4 @@
-package com.xinghen.base;
+package old_codes;
 
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
@@ -7,32 +7,41 @@ import javax.annotation.Resource;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.springframework.transaction.annotation.Transactional;
 
-@Transactional
 @SuppressWarnings("unchecked")
-public class BaseServiceImp<T> implements BaseService<T> {
+public class BaseDaoImp<T> implements BaseDao<T> {
 
 	@Resource
 	private SessionFactory sessionFactory;
 	protected Class<T> clazz;
 
-	public BaseServiceImp() {
+	public BaseDaoImp() {
+
+		// 得到泛型的父类的类型参数
 		ParameterizedType pt = (ParameterizedType) this.getClass()
 				.getGenericSuperclass();
 		clazz = (Class<T>) pt.getActualTypeArguments()[0];
+		System.out.println(clazz.getName());
 	}
 
-	public void save(T iterm) {
-		getSession().save(iterm);
+	protected Session getSession() {
+		return sessionFactory.getCurrentSession();
 	}
 
-	public void deletById(Long id) {
+	public void save(T user) {
+		// TODO Auto-generated method stub
+
+		getSession().save(user);
+	}
+
+	public void delete(Long id) {
+
 		getSession().delete(getSession().get(clazz, id));
 	}
 
-	public void update(T iterm) {
-		getSession().update(iterm);
+	public void update(T user) {
+
+		getSession().update(user);
 
 	}
 
@@ -44,18 +53,15 @@ public class BaseServiceImp<T> implements BaseService<T> {
 	public List<T> getByIds(Long[] ids) {
 		return getSession()
 				.createQuery(
-						"from " + clazz.getSimpleName() + "where id in (:ids)")
-				.setParameterList("ids", ids).list();
+						"from " + clazz.getSimpleName() + "where id in (:ids)")//
+				.setParameterList("ids", ids)//
+				.list();
 	}
 
 	public List<T> findAll() {
-
-		return getSession().createQuery("from" + clazz.getSimpleName()).list();
-	}
-
-	public Session getSession() {
-
-		return sessionFactory.getCurrentSession();
+		return getSession().createQuery("from " + clazz//
+				.getSimpleName())//
+				.list();
 	}
 
 }

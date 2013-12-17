@@ -21,7 +21,6 @@
 			<result name="success">/WEB-INF/jsp/contact_us.jsp</result>
 		</action>
 
-
 		<!-- 测试modelDriven用的action -->
 		<action name="T_*" class="testAction" method="{1}">
 			<result name="success">/WEB-INF/jsp/test.jsp</result>

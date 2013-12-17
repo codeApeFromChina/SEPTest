@@ -4,10 +4,11 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import old_codes.UsedGoodDao;
+import old_codes.UsedGoodDaoImp;
+
 import org.junit.Test;
 
-import com.xinghen.dao.UsedGoodDao;
-import com.xinghen.dao.imp.UsedGoodDaoImp;
 import com.xinghen.service.IndexService;
 import com.xinghen.service.imp.IndexServiceImp;
 import com.xinghen.service.imp.UsedGoodServiceImp;

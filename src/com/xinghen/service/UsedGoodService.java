@@ -1,15 +1,8 @@
 package com.xinghen.service;
 
-import java.util.List;
-
+import com.xinghen.base.BaseService;
 import com.xinghen.domain.UsedGood;
 
-public interface UsedGoodService {
+public interface UsedGoodService extends BaseService<UsedGood> {
 	
-	void save (UsedGood usedGood);
-	void delet (Long id);
-	void update (UsedGood usedGood);
-	UsedGood getById(Long id);
-	List <UsedGood> findAll ();
-
 }
