@@ -13,7 +13,7 @@ import com.sun.org.apache.bcel.internal.generic.NEW;
 import com.xinghen.domain.TestBean;
 
 
-@Controller
+@Controller("testAction2")
 @Scope("prototype")
 //implements ModelDriven<TestBean>
 public class TestAction extends ActionSupport    {

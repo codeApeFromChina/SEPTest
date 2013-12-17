@@ -39,7 +39,8 @@
 		<!-- 产品相关的action -->
 
 		<action name="goodAction_*" class="goodAction" method="{1}">
-
+		
+			<result name="input">/WEB-INF/jsp/error.jsp</result>
 			<result name="save">/WEB-INF/jsp/usedGoodsAction/addUsedGood.jsp</result>
 			<result name="toShowUI">/WEB-INF/jsp/usedGoodsAction/toShowUI.jsp</result>
 

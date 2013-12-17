@@ -43,36 +43,36 @@
 
 					<tr>
 						<td>交易地点</td>
-						<td><s:textfield name="usedGood.tradeLocation" value = "青岛大学"></s:textfield>
+						<td><s:textfield name="tradeLocation" value="青岛大学"></s:textfield>
 						</td>
 					</tr>
 
 					<tr>
 						<td>货物名称</td>
-						<td><s:textfield name="usedGood.name" value = "一件商品"></s:textfield></td>
+						<td><s:textfield name="name" value="一件商品"></s:textfield></td>
 					</tr>
 					<tr>
 						<td>货物类型</td>
-						<td><s:select name="usedGood.type" list="#typeList"
-								headerKey="" headerValue="二手商品"></s:select></td>
+						<td><s:select name="type" list="#typeList" headerKey=""
+								headerValue="二手商品"></s:select></td>
 					</tr>
 					<tr>
 						<td>转手价格</td>
-						<td><s:textfield name="usedGood.price" value = "100"></s:textfield></td>
+						<td><s:textfield name="price" value="100"></s:textfield></td>
 					</tr>
 					<tr>
 						<td>交易类型</td>
-						<td><s:textfield name="usedGood.tradeType" value = "当面交易"></s:textfield>
+						<td><s:textfield name="tradeType" value="当面交易"></s:textfield>
 						</td>
 					</tr>
 					<tr>
 						<td>商品简介</td>
-						<td><s:textarea name="usedGood.description" value = "这个东西还不错～"></s:textarea>
+						<td><s:textarea name="description" value="这个东西还不错～"></s:textarea>
 						</td>
 					</tr>
 					<tr>
 						<td>file</td>
-						<td id="more"><s:file name="images"></s:file> <input
+						<td id="more"><s:file name="imageList"></s:file> <input
 							type="button" value="Add More.." onclick="addMore()"></td>
 					</tr>
 					<tr>
