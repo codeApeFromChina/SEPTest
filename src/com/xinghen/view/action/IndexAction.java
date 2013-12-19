@@ -29,12 +29,22 @@ public class IndexAction extends ActionSupport  {
 		String queryType;
 		queryType = "二手商品";
 		usedGoodList = indexService.findByType(queryType);
-		usedGoodList = UsedGoodHandler.shortDisplayItermDesc(usedGoodList);
-		actionContext.put("usedGoodList", usedGoodList);
-
+		
 		queryType = "二手书籍";
 		List usedBookList = indexService.findByType(queryType);
-		usedBookList = UsedGoodHandler.shortDisplayItermDesc(usedBookList);
+		
+		List sliderList = new ArrayList<DisplayIterm>();
+		sliderList.addAll(usedBookList);
+		sliderList.addAll(usedGoodList);
+		
+		sliderList = UsedGoodHandler.shortDisplayItermDesc(80, sliderList);
+		actionContext.put("sliderList", sliderList);
+		
+		usedGoodList = UsedGoodHandler.shortDisplayItermDesc(40, usedGoodList);
+		actionContext.put("usedGoodList", usedGoodList);
+
+		
+		usedBookList = UsedGoodHandler.shortDisplayItermDesc(40, usedBookList);
 		actionContext.put("usedBookList", usedBookList);
 		
 		System.out.println("=================>>>");
@@ -42,11 +52,7 @@ public class IndexAction extends ActionSupport  {
 		
 		System.out.println("=================>>>");
 
-		List sliderList = new ArrayList<DisplayIterm>();
-		sliderList.addAll(usedBookList);
-		sliderList.addAll(usedGoodList);
-		sliderList = UsedGoodHandler.shortDisplayItermDesc(sliderList);
-		actionContext.put("sliderList", sliderList);
+		
 		System.out.println("show first page ~~");
 		return "homePageUI";
 	}

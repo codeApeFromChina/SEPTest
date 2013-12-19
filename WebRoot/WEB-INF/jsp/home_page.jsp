@@ -22,23 +22,22 @@
 										<h1>
 											<s:property value="#sliderList[0].name" />
 										</h1>
-										<h5>
+										<p>
 											<s:property value="#sliderList[0].description" />
 
-										</h5>
-										<h3>
-											<a href="product.html" class="btn">Learn more</a>
-										</h3>
+										</p>
+										<p>
+											<a href="product.html" >..查看更多</a>
+										</p>
 									</div>
-									<div class="span5" style = "height : 400px">
+									<div class="span5" style="height : 400px">
 										<img
-											src="<s:url value="/images/%{#sliderList[0].imageName}"/>"
-											 />
+											src="<s:url value="/images/%{#sliderList[0].imageName}"/>" />
 									</div>
 								</div>
 							</div>
 						</div>
-						
+
 
 						<s:iterator value="#sliderList" var="sliderIterm">
 							<div class="item">
@@ -47,16 +46,16 @@
 										<div class="span7 marketting-info">
 
 											<h1>
-											<s:property value="#sliderIterm.name" />
+												<s:property value="#sliderIterm.name" />
 											</h1>
-											<h5>
+											<p>
 												<s:property value="#sliderIterm.description" />
-											</h5>
-											<h3>
-												<a href="product.html" class="btn">Learn more</a>
-											</h3>
+											</p>
+											<p>
+												<a href="product.html">.. 查看更多</a>
+											</p>
 										</div>
-										<div class="span5" style = "height : 400px">
+										<div class="span5" style="height : 400px">
 											<img src="<s:url value="/images/%{#sliderIterm.imageName}"/>" />
 										</div>
 									</div>
@@ -95,14 +94,11 @@
 										<s:property value="#usedGood.name" />
 									</h3>
 									<s:property value="#usedGood.description" />
+								<s:a href="product.html">.. 查看更多</s:a>
 								</div>
-								<div class="widget-footer">
-									<p>
-										<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-											href="product.html" class="btn">Read more</a>
-									</p>
-								</div>
-							</div></li>
+								
+							</div>
+						</li>
 					</s:iterator>
 				</ul>
 			</div>
@@ -127,14 +123,10 @@
 										<s:property value="#usedBook.name" />
 									</h3>
 									<s:property value="#usedBook.description" />
+									<s:a href="product.html">.. 查看更多</s:a>
 								</div>
-								<div class="widget-footer">
-									<p>
-										<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-											href="product.html" class="btn">Read more</a>
-									</p>
-								</div>
-							</div></li>
+							</div>
+						</li>
 					</s:iterator>
 				</ul>
 			</div>
