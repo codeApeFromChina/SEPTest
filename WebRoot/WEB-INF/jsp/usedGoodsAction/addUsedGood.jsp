@@ -3,7 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<s:include value="../header.jsp"></s:include>
+<s:include value="../basic_resource/header.jsp"></s:include>
 
 <script>
 	function addMore() {
@@ -89,5 +89,5 @@
 
 </div>
 <!-- End: MAIN CONTENT -->
-<s:include value="../footer.jsp"></s:include>
+<s:include value="../basic_resource/footer.jsp"></s:include>
 </html>

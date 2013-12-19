@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<s:include value="header.jsp"></s:include>
+<s:include value="basic_resource/header.jsp"></s:include>
 <body>
 	<!-- Start: MAIN CONTENT -->
 	<div class="content">
@@ -40,7 +40,7 @@
 						</div>
 						
 
-						<s:iterator value="#sliderList" id="sliderIterm">
+						<s:iterator value="#sliderList" var="sliderIterm">
 							<div class="item">
 								<div class="hero-unit">
 									<div class="row-fluid">
@@ -84,10 +84,10 @@
 			</div>
 			<div class="row-fluid">
 				<ul class="thumbnails">
-					<s:iterator value="usedGoodList" id="usedGood">
+					<s:iterator value="#usedGoodList" id="usedGood">
 						<li class="span4" id="${usedGood.id}">
 							<div class="thumbnail">
-								<s:property value="usedGood.name" />
+								<s:property value="#usedGood.name" />
 								<img src="<s:url value="/images/%{#usedGood.imageName}"/>"
 									width=700px />
 								<div class="caption">
@@ -107,9 +107,7 @@
 				</ul>
 			</div>
 
-
 			<!-- second_good_list end -->
-
 
 			<!-- second_book_list start -->
 			<div class="page-header">
@@ -118,17 +116,17 @@
 			</div>
 			<div class="row-fluid">
 				<ul class="thumbnails">
-					<s:iterator value="usedBookList" id="usedBook">
+					<s:iterator value="#usedBookList" id="usedBook">
 						<li class="span4" id="${usedBook.id}">
 							<div class="thumbnail">
-								<s:property value="usedBook.name" />
+								<s:property value="#usedBook.name" />
 								<img src="<s:url value="/images/%{#usedBook.imageName}"/>"
 									width=700px />
 								<div class="caption">
 									<h3>
 										<s:property value="#usedBook.name" />
 									</h3>
-									<s:property value="#usedGood.description" />
+									<s:property value="#usedBook.description" />
 								</div>
 								<div class="widget-footer">
 									<p>
@@ -146,6 +144,6 @@
 	</div>
 	<!-- End: MAIN CONTENT -->
 
-	<s:include value="footer.jsp"></s:include>
+	<s:include value="basic_resource/footer.jsp"></s:include>
 </body>
 </html>
