@@ -27,7 +27,7 @@
 
 										</p>
 										<p>
-											<a href="product.html" >..查看更多</a>
+											<s:a href="displayAction_showIterm.action?itermId=%{#sliderList[0].id}" >..查看更多</s:a>
 										</p>
 									</div>
 									<div class="span5" style="height : 400px">
@@ -52,7 +52,7 @@
 												<s:property value="#sliderIterm.description" />
 											</p>
 											<p>
-												<a href="product.html">.. 查看更多</a>
+												<s:a href="displayAction_showIterm.action?itermId=%{#sliderIterm.id}">.. 查看更多</s:a>
 											</p>
 										</div>
 										<div class="span5" style="height : 400px">
@@ -94,7 +94,7 @@
 										<s:property value="#usedGood.name" />
 									</h3>
 									<s:property value="#usedGood.description" />
-								<s:a href="product.html">.. 查看更多</s:a>
+								<s:a href="displayAction_showIterm.action?itermId=%{#usedGood.id}">.. 查看更多</s:a>
 								</div>
 								
 							</div>
@@ -123,7 +123,7 @@
 										<s:property value="#usedBook.name" />
 									</h3>
 									<s:property value="#usedBook.description" />
-									<s:a href="product.html">.. 查看更多</s:a>
+									<s:a href="displayAction_showIterm.action?itermId=%{#usedBook.id}">.. 查看更多</s:a>
 								</div>
 							</div>
 						</li>

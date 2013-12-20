@@ -37,11 +37,14 @@ public class BaseServiceImp<T> implements BaseService<T> {
 	}
 
 	public T getById(Long id) {
-
+		if (id == null)
+			return null;
 		return (T) getSession().get(clazz, id);
 	}
 
 	public List<T> getByIds(Long[] ids) {
+		
+		
 		return getSession()
 				.createQuery(
 						"from " + clazz.getSimpleName() + "where id in (:ids)")

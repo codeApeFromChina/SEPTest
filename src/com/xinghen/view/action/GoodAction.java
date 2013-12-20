@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
+import com.xinghen.base.BaseAction;
 import com.xinghen.domain.UsedGood;
 import com.xinghen.domain.User;
 import com.xinghen.service.UsedGoodService;
@@ -21,12 +22,7 @@ import com.xinghen.utils.MyIOUtils;
 
 @Controller
 @Scope("prototype")
-public class GoodAction extends ActionSupport  implements ModelDriven<UsedGood>
-{
-	@Resource
-	private UsedGoodService usedGoodService;
-	
-	private UsedGood usedGood = new UsedGood();
+public class GoodAction extends BaseAction<UsedGood> {
 
 	private List<File> imageList;
 
@@ -35,11 +31,6 @@ public class GoodAction extends ActionSupport  implements ModelDriven<UsedGood>
 	private List<String> imageListContentType;
 
 	private List<String> typeList = new ArrayList<String>();
-	
-	
-	public UsedGood getModel() {
-		return usedGood;
-	}
 
 	/**
 	 * 显示添加商品界面的action
@@ -65,26 +56,19 @@ public class GoodAction extends ActionSupport  implements ModelDriven<UsedGood>
 
 		String path = ServletActionContext.getServletContext().getRealPath("/");
 		List<String> imagesName = getImageListFileName();
-
+		UsedGood usedGood = getModel();
 		MyIOUtils.getInstance().inputImage(path, imageList, imagesName,
-				getUsedGood());
-		
+				usedGood);
+
 		User tUser = new User();
 		tUser.setId(1l);
 		usedGood.setUser(tUser);
 		usedGoodService.save(usedGood);
-		
+
 		usedGood = usedGoodService.getById(usedGood.getId());
-	
+
 		Set imageSet = usedGood.getImages();
-		
-//==================    輸出文件列表的每個文件名
-//		Iterator it =imageSet.iterator();
-//		
-//		while (it.hasNext())
-//		{
-//			System.out.println(((Image) it.next()).getImageName());
-//		}
+
 		return "toShowUI";
 	}
 
@@ -101,16 +85,11 @@ public class GoodAction extends ActionSupport  implements ModelDriven<UsedGood>
 
 	// ===================================================================================
 
+	public void initTypeList() {
 
-	public void initTypeList (){
-		
 		typeList.add("二手商品");
 		typeList.add("二手书籍");
-		
-	}
-	
-	public UsedGood getUsedGood() {
-		return usedGood;
+
 	}
 
 	public List<String> getTypeList() {
@@ -119,10 +98,6 @@ public class GoodAction extends ActionSupport  implements ModelDriven<UsedGood>
 
 	public void setTypeList(List<String> typeList) {
 		this.typeList = typeList;
-	}
-
-	public void setUsedGood(UsedGood usedGood) {
-		this.usedGood = usedGood;
 	}
 
 	public List<File> getImageList() {
@@ -148,6 +123,5 @@ public class GoodAction extends ActionSupport  implements ModelDriven<UsedGood>
 	public void setImageListContentType(List<String> imageListContentType) {
 		this.imageListContentType = imageListContentType;
 	}
-
 
 }

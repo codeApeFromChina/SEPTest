@@ -26,11 +26,11 @@ public class IndexServiceImp extends BaseServiceImp<UsedGood> implements
 		IndexService {
 
 	private String sql;
-
+	
 	public List<DisplayIterm> findByType(String type) {
 		int start = 0;
 		int limit = 5;
-
+		
 		sql = "select ug.id, ug.name, ug.description, ug.price, img.imageName from "
 				+ "usedGood ug join image img on img.usedGOodId = ug.id"
 				+ " where ug.type = :type and img.imageType = 1";

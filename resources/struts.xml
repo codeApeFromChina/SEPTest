@@ -38,20 +38,20 @@
 		<!-- 产品相关的action -->
 
 		<action name="goodAction_*" class="goodAction" method="{1}">
-		
 			<result name="input">/WEB-INF/jsp/basic_resource/error.jsp</result>
 			<result name="save">/WEB-INF/jsp/usedGoodsAction/addUsedGood.jsp</result>
 			<result name="toShowUI">/WEB-INF/jsp/usedGoodsAction/toShowUI.jsp</result>
-
 			<!-- 上传文件拦截器 -->
 			<interceptor-ref name="fileUpload">
-				<!-- 设置文件上传大小 -->
 				<param name="maximumSize">4096010</param>
 				<!-- 设置文件上传类型 26 <param name="allowedTypes"> 27 application/vnd.ms-powerpoint 28 </param> 29 -->
 			</interceptor-ref>
-			<!-- 自定义了拦截器后必手动定义默认的拦截器，否则默认的拦截器不会被执行 -->
 			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
 
+		<!--  展示相关的action -->
+		<action name = "displayAction_*" class = "displayAction" method = "{1}" >
+			<result name = "oneIterm"></result>
 		</action>
 
 

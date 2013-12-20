@@ -12,10 +12,6 @@ public class Image {
 	private UsedGood usedGood;
 	private Boolean imageType ;
 	
-	
-	
-	
-	
 	public Image() {
 		super();
 	}
