@@ -67,8 +67,6 @@ public class GoodAction extends BaseAction<UsedGood> {
 
 		usedGood = usedGoodService.getById(usedGood.getId());
 
-		Set imageSet = usedGood.getImages();
-
 		return "toShowUI";
 	}
 

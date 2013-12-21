@@ -14,7 +14,7 @@
 		var button = document.createElement("input");
 
 		input.type = "file";
-		input.name = "images";
+		input.name = "imageList";
 
 		button.type = "button";
 		button.value = "Remove";
@@ -33,7 +33,7 @@
 <!-- Start: MAIN CONTENT -->
 <div class="content">
 
-	<div class="content-primary">
+	<div class="content-primary ">
 		<s:form role="form" action="goodAction_addGood" theme="simple"
 			enctype="multipart/form-data" method="post">
 

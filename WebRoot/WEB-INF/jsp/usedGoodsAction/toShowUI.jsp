@@ -19,29 +19,26 @@
 <s:include value="../basic_resource/header.jsp"></s:include>
 <!-- Start: MAIN CONTENT -->
 <div class="content">
-	<div class="content-primary">
-	
-		<p>货物名称:</p>
-		<s:property value="usedGood.name" />
-		<br>
-		<p>货物类型:</p>
-		<s:property value="usedGood.type" />
-		<br>
-		<p>转手价格：</p>
-		<s:property value="usedGood.price" />
-		<br>
-		<p>交易类型：</p>
-		<s:property value="usedGood.tradeType" />
-		<br>
-		<p>交易地点:</p>
-		<s:property value="usedGood.tradeLocation" />
-		<br>
-		<p>商品描述</p>
-		<s:property value="usedGood.description" />
-		<br>
-		<s:iterator value="usedGood.images" id="img">
+	<div class="content-primary ">
+		<ul class="iterm-block well" style="margin :0 auto;float : left">
+			<li>货物名称: <s:property value="name" />
+			</li>
+			<li>货物类型: <s:property value="type" />
+			</li>
+			<li>转手价格： <s:property value="price" />
+			</li>
+			<li>交易类型： <s:property value="tradeType" />
+			</li>
+			<li>交易地点: <s:property value="tradeLocation" />
+			</li>
+			<li>商品描述: <s:property value="description" />
+			</li>
+		</ul>
 
-			<img src="<s:url value="/images/%{#img.imageName}"/>" width=700px />
+		<s:iterator value="images" id="img">
+
+			<img src="<s:url value="/images/%{#img.imageName}"/>"
+				style="width : 700px; margin : 10px" />
 		</s:iterator>
 
 	</div>

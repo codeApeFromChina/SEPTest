@@ -86,7 +86,6 @@
 					<s:iterator value="#usedGoodList" id="usedGood">
 						<li class="span4" id="${usedGood.id}">
 							<div class="thumbnail">
-								<s:property value="#usedGood.name" />
 								<img src="<s:url value="/images/%{#usedGood.imageName}"/>"
 									width=700px />
 								<div class="caption">
@@ -115,7 +114,6 @@
 					<s:iterator value="#usedBookList" id="usedBook">
 						<li class="span4" id="${usedBook.id}">
 							<div class="thumbnail">
-								<s:property value="#usedBook.name" />
 								<img src="<s:url value="/images/%{#usedBook.imageName}"/>"
 									width=700px />
 								<div class="caption">

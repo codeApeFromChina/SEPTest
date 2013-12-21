@@ -4,3 +4,12 @@
 	margin: 0 auto;
 	width: 70%;
 }
+
+.iterm-block li {
+	width : 40%;
+	float : left;
+	margin : 20px;
+	list-style : none;
+	overflow : hidden;
+	white-space : nowrap;
+}

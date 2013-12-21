@@ -29,11 +29,11 @@ public class IndexServiceImp extends BaseServiceImp<UsedGood> implements
 	
 	public List<DisplayIterm> findByType(String type) {
 		int start = 0;
-		int limit = 5;
+		int limit_num = 3;
 		
 		sql = "select ug.id, ug.name, ug.description, ug.price, img.imageName from "
 				+ "usedGood ug join image img on img.usedGOodId = ug.id"
-				+ " where ug.type = :type and img.imageType = 1";
+				+ " where ug.type = :type and img.imageType = 1 limit :limit_num";
 		Session session = getSession();
 
 		Query query = getSession().createSQLQuery(sql)
@@ -43,6 +43,7 @@ public class IndexServiceImp extends BaseServiceImp<UsedGood> implements
 				.addScalar("price", Hibernate.FLOAT)
 				.addScalar("imageName", Hibernate.STRING);
 
+		query.setParameter("limit_num", limit_num);
 		query.setParameter("type", type);
 		query.setResultTransformer(Transformers.aliasToBean(DisplayIterm.class));
 

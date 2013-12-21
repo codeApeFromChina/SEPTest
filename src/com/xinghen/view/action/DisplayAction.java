@@ -1,15 +1,14 @@
 package com.xinghen.view.action;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.xinghen.base.BaseAction;
 import com.xinghen.domain.Image;
 import com.xinghen.domain.UsedGood;
-import com.xinghen.service.DisplayService;
 
 @Controller
 @Scope("prototype")
@@ -19,13 +18,10 @@ public class DisplayAction extends BaseAction<UsedGood> {
 
 	public String showIterm() {
 		UsedGood usedGood = displayService.getById(itermId);
-
-		usedGood.setImages(new HashSet<Image>(imageService
-				.getByForeignKey(itermId)));
 		
-		System.out.println("=======>>>>");
+		ActionContext.getContext().getValueStack().push(usedGood);
 		System.out.println("showIterm>>>>>");
-		return "showItermUI";
+		return "oneIterm";
 	}
 
 	// ------------------------------------
