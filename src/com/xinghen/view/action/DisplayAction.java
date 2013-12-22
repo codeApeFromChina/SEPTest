@@ -23,6 +23,18 @@ public class DisplayAction extends BaseAction<UsedGood> {
 		System.out.println("showIterm>>>>>");
 		return "oneIterm";
 	}
+	
+	public String displayIterm (){
+		
+		return "displayIterm";
+	}
+	
+	public String displayAll (){
+		
+		return "displayAll";
+	}
+	
+	
 
 	// ------------------------------------
 	public Long getItermId() {

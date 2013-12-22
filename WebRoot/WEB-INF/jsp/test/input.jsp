@@ -10,10 +10,16 @@
 <html>
 
 	<body>
-		<s:debug></s:debug>
-<!-- 		<s:fielderror></s:fielderror> -->
-		<s:actionmessage/>
-<!-- 		<s:actionerror/> -->
+		 <s:select label="My Selection"
+            name="mySelection"
+            value="%{'POPEYE'}"
+            list="%{#{'SUPERMAN':'Superman', 'SPIDERMAN':'spiderman'}}">
+    <s:optgroup label="Adult"
+                 list="%{#{'SOUTH_PARK':'South Park'}}" />
+    <s:optgroup label="Japanese"
+                 list="%{#{'POKEMON':'pokemon','DIGIMON':'digimon','SAILORMOON':'Sailormoon'}}" />
+ </s:select>
+
 	
 	</body>
 

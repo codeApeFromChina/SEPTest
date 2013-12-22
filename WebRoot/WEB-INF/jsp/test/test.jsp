@@ -25,7 +25,9 @@
 <!-- 		</tr> -->
 
 <!-- 		<s:select name="name" list="#{'used_good':'二手商品','used_book':'二手书籍'}" label="性别" headerKey="" headerValue="姓名"></s:select>  -->
-		<s:select name="testBean.name" list="#beanList"  headerKey="" headerValue="商品类型"></s:select> 
+		<s:select name="testBean.name" list="#beanList"  headerKey="" headerValue="商品类型">
+		
+		</s:select> 
 
 		<td><s:submit value="submit "></s:submit>
 		</td>

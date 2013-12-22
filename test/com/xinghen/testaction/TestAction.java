@@ -1,7 +1,9 @@
 package com.xinghen.testaction;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -15,47 +17,31 @@ import com.xinghen.domain.TestBean;
 
 @Controller("testAction2")
 @Scope("prototype")
-//implements ModelDriven<TestBean>
-public class TestAction extends ActionSupport    {
-//	int age = 1;
-//	String name = "11";
-//	Float price = 111f;
-//	
-//	private TestBean testBean = new TestBean();
-//	
-//	public int getAge() {
-//		return age;
-//	}
-//
-//	public void setAge(int age) {
-//		this.age = age;
-//	}
-//
-//	public String getName() {
-//		return name;
-//	}
-//
-//	public void setName(String name) {
-//		this.name = name;
-//	}
-//
-//	public Float getPrice() {
-//		return price;
-//	}
-//
-//	public void setPrice(Float price) {
-//		this.price = price;
-//	}
+public class TestAction extends ActionSupport  implements ModelDriven<TestBean>
+{
 
-	public TestBean getTestBean() {
-		return testBean;
-	}
-
-	public void setTestBean(TestBean testBean) {
-		this.testBean = testBean;
-	}
+	private String type ;
 
 	TestBean testBean = new TestBean();
+	
+	public String optGroupTest (){
+		Map typeList= new HashMap();
+		
+		Map bookCategory =new HashMap<String, String>();
+		bookCategory.put("E|数学书", "数学书");
+		bookCategory.put("E|语文书", "语文书");
+		bookCategory.put("E|英语书", "英语书");
+		
+		typeList.put("二手书", bookCategory);
+		ActionContext.getContext().put("typeList", bookCategory);
+		return "optGroupTest";
+	}
+	
+	public String optRecv (){
+		
+		System.out.println(type);
+		return "success";
+	}
 
 	public String exec (){
 //		List<String> role = new ArrayList<String> ();
@@ -80,7 +66,7 @@ public class TestAction extends ActionSupport    {
 	}
 	
 	public String test (){
-//		ActionContext.getContext().put("test", testBean);
+		ActionContext.getContext().put("test", testBean);
 		System.out.println(">>>>>>>>>>>>>>>");
 		System.out.println("====" + testBean.getName());
 		System.out.println(testBean.getPrice());
@@ -88,6 +74,22 @@ public class TestAction extends ActionSupport    {
 		return "test";
 	}
 
+	
+	public TestBean getTestBean() {
+		return testBean;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public void setTestBean(TestBean testBean) {
+		this.testBean = testBean;
+	}
 	public TestBean getModel() {
 		return testBean;
 	}

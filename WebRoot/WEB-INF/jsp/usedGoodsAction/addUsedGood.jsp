@@ -49,16 +49,22 @@
 
 					<tr>
 						<td>货物名称</td>
-						<td><s:textfield name="name" value="一件商品"></s:textfield></td>
+						<td><s:textfield name="name" value="一件商品"></s:textfield>
+						</td>
 					</tr>
 					<tr>
 						<td>货物类型</td>
-						<td><s:select name="type" list="#typeList" headerKey=""
-								headerValue="二手商品"></s:select></td>
+						<td>
+							<s:select name="type" list="{}">
+								<s:optgroup  label="二手书"   list="#bookCategory"></s:optgroup>
+								<s:optgroup label ="二手物品" list="#goodCategory"></s:optgroup>
+							</s:select>
+						</td>
 					</tr>
 					<tr>
 						<td>转手价格</td>
-						<td><s:textfield name="price" value="100"></s:textfield></td>
+						<td><s:textfield name="price" value="100"></s:textfield>
+						</td>
 					</tr>
 					<tr>
 						<td>交易类型</td>
@@ -73,13 +79,12 @@
 					<tr>
 						<td>file</td>
 						<td id="more"><s:file name="imageList"></s:file> <input
-							type="button" value="Add More.." onclick="addMore()"></td>
+							type="button" value="Add More.." onclick="addMore()">
+						</td>
 					</tr>
 					<tr>
-						<td><s:submit value=" submit "></s:submit>
-						</td>
-						<td><s:reset value=" reset "></s:reset>
-						</td>
+						<td><s:submit value=" submit "></s:submit></td>
+						<td><s:reset value=" reset "></s:reset></td>
 					</tr>
 				</table>
 			</div>

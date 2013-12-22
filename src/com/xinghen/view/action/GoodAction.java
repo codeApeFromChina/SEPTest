@@ -1,27 +1,26 @@
 package com.xinghen.view.action;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
 
-import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.struts2.ServletActionContext;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
 import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 import com.xinghen.base.BaseAction;
+import static com.xinghen.base.BaseVar.*;
+
 import com.xinghen.domain.UsedGood;
 import com.xinghen.domain.User;
-import com.xinghen.service.UsedGoodService;
 import com.xinghen.utils.MyIOUtils;
 
 @Controller
 @Scope("prototype")
+@SuppressWarnings("unchecked")
 public class GoodAction extends BaseAction<UsedGood> {
 
 	private List<File> imageList;
@@ -30,7 +29,9 @@ public class GoodAction extends BaseAction<UsedGood> {
 
 	private List<String> imageListContentType;
 
-	private List<String> typeList = new ArrayList<String>();
+	private Map bookCategory = new HashMap<String, String>();
+
+	private Map goodCategory = new HashMap<String, String>();
 
 	/**
 	 * 显示添加商品界面的action
@@ -41,7 +42,9 @@ public class GoodAction extends BaseAction<UsedGood> {
 	public String saveUI() throws Exception {
 
 		initTypeList();
-		ActionContext.getContext().put("typeList", typeList);
+		ActionContext.getContext().put("bookCategory", bookCategory);
+		ActionContext.getContext().put("goodCategory", goodCategory);
+
 		System.out.println("show images UI ~~~");
 		return "save";
 	}
@@ -57,6 +60,9 @@ public class GoodAction extends BaseAction<UsedGood> {
 		String path = ServletActionContext.getServletContext().getRealPath("/");
 		List<String> imagesName = getImageListFileName();
 		UsedGood usedGood = getModel();
+
+		setType(usedGood);
+
 		MyIOUtils.getInstance().inputImage(path, imageList, imagesName,
 				usedGood);
 
@@ -83,19 +89,44 @@ public class GoodAction extends BaseAction<UsedGood> {
 
 	// ===================================================================================
 
+	public void setType(UsedGood usedGood) {
+
+		String rowType = usedGood.getType();
+		String type1 = USED_BOOK_TYPE;
+		String type2 = USED_GOOD_TYPE;
+		String str[] = rowType.split(":");
+		System.out.println(str[0]);
+		System.out.println(str[1]);
+
+		if (str[0].equals("B")) {
+			usedGood.setType(type1);
+			usedGood.setDetailedCategory(str[1]);
+		} else {
+
+			usedGood.setType(type2);
+			usedGood.setDetailedCategory(str[1]);
+		}
+	}
+
 	public void initTypeList() {
-
-		typeList.add("二手商品");
-		typeList.add("二手书籍");
-
+		bookCategory.putAll(BOOK_CATEGORY);
+		goodCategory.putAll(GOOD_CATEGORY);
 	}
 
-	public List<String> getTypeList() {
-		return typeList;
+	public Map getBookCategory() {
+		return bookCategory;
 	}
 
-	public void setTypeList(List<String> typeList) {
-		this.typeList = typeList;
+	public void setBookCategory(Map bookCategory) {
+		this.bookCategory = bookCategory;
+	}
+
+	public Map getGoodCategory() {
+		return goodCategory;
+	}
+
+	public void setGoodCategory(Map goodCategory) {
+		this.goodCategory = goodCategory;
 	}
 
 	public List<File> getImageList() {

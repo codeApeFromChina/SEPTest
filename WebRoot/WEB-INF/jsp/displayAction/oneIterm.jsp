@@ -10,9 +10,9 @@
 
 	<div class="content container-fluid"
 		style="width : 70%;margin : 0 auto">
-		<div class="row-fluid" style="margin-top: 20px">
+		<div class="row-fluid" style=" margin:0 auto">
 
-			<div class="span6 well">
+			<div class="span6 well" >
 				<p>telephone : 1111111</p>
 				<p>2</p>
 				<p>3</p>
@@ -34,7 +34,7 @@
 				</div>
 
 				<p>
-				<div id="description-container" class="iterm-block">
+				<div id="description-container" class="iterm-block" style = "margin:0 auto">
 					<ul>
 						<li>商品名称： <s:property value="name" /></li>
 						<li>商品類型： <s:property value="type" /></li>
@@ -42,10 +42,10 @@
 					</ul>
 				</div>
 
-				<div id="imageList-container">
+				<div id="imageList-container " >
 					<s:iterator value="images" var="img">
-						<img src="<s:url value="/images/%{#img.imageName}"/>"
-							style="width : 700px; margin : 10px" />
+						<img  src="<s:url value="/images/%{#img.imageName}"/>"
+							style="width : 700px; margin : auto auto; text-align:center" />
 						<s:property value="img.imageName" />
 					</s:iterator>
 				</div>

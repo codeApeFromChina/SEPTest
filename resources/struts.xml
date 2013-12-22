@@ -4,36 +4,42 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+
 	<!-- 配置为开发模式 -->
 	<constant name="struts.devMode" value="true" />
 	<!-- 配置扩展名为action -->
-<!-- 	<constant name="struts.action.extension" value="action" /> -->
+	<!-- <constant name="struts.action.extension" value="action" /> -->
 
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
 	<package name="default" namespace="/" extends="struts-default">
 
-
-<!-- 		配置默认访问页 -->
+		<!-- 配置默认访问页 -->
 		<default-action-ref name="home_page" />
-		
-		
-		<!-- 测试用的action，当与Spring整合后，class属性写的就是Spring中bean的名称 -->
+
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+
+		<!-- d测试用的action，当与Spring整合后，class属性写的就是Spring中bean的名称 -->
+
 		<action name="test" class="userAction">
 			<result name="success">/WEB-INF/jsp/contact_us.jsp</result>
 		</action>
 
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+
 		<!-- 测试modelDriven用的action -->
-		<action name="T_*" class="testAction" method="{1}">
-			<result name="success">/WEB-INF/jsp/test.jsp</result>
+
+		<action name="T_*" class="testAction2" method="{1}">
+			<result name="success">/WEB-INF/jsp/test/test_success.jsp</result>
 			<result name="test">/WEB-INF/jsp/test_success.jsp</result>
+			<result name="optGroupTest">/WEB-INF/jsp/test/optGroupTest.jsp</result>
 		</action>
 
-<!-- ===========================================================================================-->
 
-
-		<action name="home_page" class="indexAction" method = "homePageUI">
+		<action name="home_page" class="indexAction" method="homePageUI">
 			<result name="homePageUI">/WEB-INF/jsp/home_page.jsp</result>
 		</action>
 
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
 
 		<!-- 产品相关的action -->
 
@@ -49,11 +55,14 @@
 			<interceptor-ref name="defaultStack"></interceptor-ref>
 		</action>
 
-		<!--  展示相关的action -->
-		<action name = "displayAction_*" class = "displayAction" method = "{1}" >
-			<result name = "oneIterm">/WEB-INF/jsp/displayAction/oneIterm.jsp</result>
-		</action>
+<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
 
+		<!-- 展示相关的action -->
+
+		<action name="displayAction_*" class="displayAction" method="{1}">
+			<result name="oneIterm">/WEB-INF/jsp/displayAction/oneIterm.jsp</result>
+			<result name="displayAll">/WEB-INF/jsp/displayAction/displayAll.jsp</result>
+		</action>
 
 	</package>
 

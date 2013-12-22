@@ -27,7 +27,7 @@
 
 										</p>
 										<p>
-											<s:a href="displayAction_showIterm.action?itermId=%{#sliderList[0].id}" >..查看更多</s:a>
+											<s:a href="displayAction_showIterm.action?itermId=%{#sliderList[0].id}" >..了解详情</s:a>
 										</p>
 									</div>
 									<div class="span5" style="height : 400px">
@@ -52,7 +52,7 @@
 												<s:property value="#sliderIterm.description" />
 											</p>
 											<p>
-												<s:a href="displayAction_showIterm.action?itermId=%{#sliderIterm.id}">.. 查看更多</s:a>
+												<s:a href="displayAction_showIterm.action?itermId=%{#sliderIterm.id}">...了解详情</s:a>
 											</p>
 										</div>
 										<div class="span5" style="height : 400px">
@@ -79,7 +79,10 @@
 
 			<!-- second_good_list start -->
 			<div class="page-header">
-				<h2>二手物品</h2>
+				<span>
+					<h2>二手物品</h2>
+					<s:a href = "">查看更多..</s:a>
+				</span>
 			</div>
 			<div class="row-fluid">
 				<ul class="thumbnails">
@@ -93,7 +96,7 @@
 										<s:property value="#usedGood.name" />
 									</h3>
 									<s:property value="#usedGood.description" />
-								<s:a href="displayAction_showIterm.action?itermId=%{#usedGood.id}">.. 查看更多</s:a>
+								<s:a href="displayAction_showIterm.action?itermId=%{#usedGood.id}">...了解详情</s:a>
 								</div>
 								
 							</div>
@@ -108,6 +111,7 @@
 			<div class="page-header">
 
 				<h2>二手书籍</h2>
+				<s:a>查看更多..</s:a>
 			</div>
 			<div class="row-fluid">
 				<ul class="thumbnails">
@@ -121,7 +125,7 @@
 										<s:property value="#usedBook.name" />
 									</h3>
 									<s:property value="#usedBook.description" />
-									<s:a href="displayAction_showIterm.action?itermId=%{#usedBook.id}">.. 查看更多</s:a>
+									<s:a href="displayAction_showIterm.action?itermId=%{#usedBook.id}">...了解详情</s:a>
 								</div>
 							</div>
 						</li>

@@ -11,6 +11,13 @@ public class UsedGood {
 	private String name;
 	private String type;
 	private Float price;
+	private String detailedCategory;
+	public String getDetailedCategory() {
+		return detailedCategory;
+	}
+	public void setDetailedCategory(String detailedCategory) {
+		this.detailedCategory = detailedCategory;
+	}
 	private String tradeType;
 	private String description;
 	private String tradeLocation;

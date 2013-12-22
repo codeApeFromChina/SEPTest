@@ -17,6 +17,7 @@
 		<property name="description"></property>
 		<property name="tradeLocation"></property>
 		<property name="uploadDate"></property>
+		<property name="detailedCategory"></property>
 
 		<!-- <one-to-one name="firstImage" class="FirstImage"/> -->
 		<!-- <one-to-one name="firstImage" cascade="all" class="FirstImage" property-ref="usedGood"/> -->
