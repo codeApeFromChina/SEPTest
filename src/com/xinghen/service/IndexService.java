@@ -7,6 +7,6 @@ import com.xinghen.domain.DisplayIterm;
 import com.xinghen.domain.UsedGood;
 
 public interface IndexService extends BaseService <UsedGood> {
-	List findByType(String type);
+	List findByType( int limit ,String type );
 
 }

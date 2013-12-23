@@ -27,9 +27,8 @@ public class IndexServiceImp extends BaseServiceImp<UsedGood> implements
 
 	private String sql;
 	
-	public List<DisplayIterm> findByType(String type) {
+	public List<DisplayIterm> findByType(int limit_num, String type  ) {
 		int start = 0;
-		int limit_num = 3;
 		
 		sql = "select ug.id, ug.name, ug.description, ug.price, img.imageName from "
 				+ "usedGood ug join image img on img.usedGOodId = ug.id"

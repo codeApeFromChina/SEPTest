@@ -27,10 +27,10 @@ public class IndexAction extends BaseAction<UsedGood> {
 
 		String queryType;
 		queryType = USED_GOOD_TYPE;
-		usedGoodList = indexService.findByType(queryType);
+		usedGoodList = indexService.findByType(3, queryType);
 
 		queryType = USED_BOOK_TYPE;
-		List usedBookList = indexService.findByType(queryType);
+		List usedBookList = indexService.findByType(3, queryType);
 
 		List sliderList = new ArrayList<DisplayIterm>();
 		sliderList.addAll(usedBookList);

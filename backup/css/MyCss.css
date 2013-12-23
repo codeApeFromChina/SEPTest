@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+
+.content-primary {
+	margin: 0 auto;
+	width: 70%;
+}
+
+.iterm-block li {
+	width : 40%;
+	float : left;
+	margin : 20px;
+	list-style : none;
+	overflow : hidden;
+	white-space : nowrap;
+	color : #555555;
+}
