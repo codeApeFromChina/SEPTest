@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Struts2Diagram version="2.0">
+  <package name="json" location="599,51" size="170,172">
+    <action name="getUserInfoByStruts" location="10,21" size="150,41">
+      <result name="success" />
+    </action>
+    <action name="setUserInfoByStruts" location="10,121" size="150,41">
+      <result name="success" />
+    </action>
+  </package>
+  <package name="default" location="10,10" size="170,171">
+    <action name="testJSONFromActionByGeneral" location="10,21" size="150,40" />
+    <action name="testByJSP" location="10,120" size="150,41">
+      <result name="success">
+        <resourceEdge source="success" routing="0" target="actionJSP.jsp" />
+      </result>
+    </action>
+  </package>
+  <webResource name="actionJSP.jsp" path="/actionJSP.jsp" location="294,130" size="150,55" />
+</Struts2Diagram>
+

@@ -29,9 +29,11 @@
 		<!-- 测试modelDriven用的action -->
 
 		<action name="T_*" class="testAction2" method="{1}">
-			<result name="success">/WEB-INF/jsp/test/test_success.jsp</result>
 			<result name="test">/WEB-INF/jsp/test_success.jsp</result>
 			<result name="optGroupTest">/WEB-INF/jsp/test/optGroupTest.jsp</result>
+			<result type = "json" name = "JTest" >
+				<param name="root">dataMap</param>
+			</result>
 		</action>
 
 
@@ -65,5 +67,15 @@
 		</action>
 
 	</package>
+	
+	<package name="testJSON" extends="json-default" namespace = "/">
+		<action name="JT_*" class = "testAction" method = "{1}">
+			<result type = "json">
+				<param name="root">dataMap</param>
+			</result>		
+		
+		</action>
+	</package>
+
 
 </struts>

@@ -11,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
-import com.sun.org.apache.bcel.internal.generic.NEW;
 import com.xinghen.domain.TestBean;
 
 
@@ -21,6 +20,7 @@ public class TestAction extends ActionSupport  implements ModelDriven<TestBean>
 {
 
 	private String type ;
+	private Map dataMap = new HashMap <String, String> ();
 
 	TestBean testBean = new TestBean();
 	
@@ -35,6 +35,16 @@ public class TestAction extends ActionSupport  implements ModelDriven<TestBean>
 		typeList.put("二手书", bookCategory);
 		ActionContext.getContext().put("typeList", bookCategory);
 		return "optGroupTest";
+	}
+	
+	public String JSONTest (){
+		
+		String str = "asdfasdf";
+		dataMap.put("testString" , str);
+		dataMap.put("success", true);
+		System.out.println("dddd");
+		
+		return "success";
 	}
 	
 	public String optRecv (){
@@ -93,4 +103,14 @@ public class TestAction extends ActionSupport  implements ModelDriven<TestBean>
 	public TestBean getModel() {
 		return testBean;
 	}
+
+	public Map getDataMap() {
+		return dataMap;
+	}
+
+	public void setDataMap(Map dataMap) {
+		this.dataMap = dataMap;
+	}
+	
 }
+

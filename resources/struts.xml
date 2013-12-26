@@ -10,13 +10,13 @@
 	<!-- 配置扩展名为action -->
 	<!-- <constant name="struts.action.extension" value="action" /> -->
 
-<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<package name="default" namespace="/" extends="struts-default">
 
 		<!-- 配置默认访问页 -->
 		<default-action-ref name="home_page" />
 
-<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+		<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 		<!-- d测试用的action，当与Spring整合后，class属性写的就是Spring中bean的名称 -->
 
@@ -24,7 +24,7 @@
 			<result name="success">/WEB-INF/jsp/contact_us.jsp</result>
 		</action>
 
-<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+		<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 		<!-- 测试modelDriven用的action -->
 
@@ -39,32 +39,55 @@
 			<result name="homePageUI">/WEB-INF/jsp/home_page.jsp</result>
 		</action>
 
-<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+		<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 		<!-- 产品相关的action -->
 
 		<action name="goodAction_*" class="goodAction" method="{1}">
 			<result name="input">/WEB-INF/jsp/basic_resource/error.jsp</result>
-			<result name="save">/WEB-INF/jsp/usedGoodsAction/addUsedGood.jsp</result>
-			<result name="toShowUI">/WEB-INF/jsp/usedGoodsAction/toShowUI.jsp</result>
+			<result name="save">/WEB-INF/jsp/usedGoodsAction/addUsedGood.jsp
+			</result>
+			<result name="toShowUI">/WEB-INF/jsp/usedGoodsAction/toShowUI.jsp
+			</result>
 			<!-- 上传文件拦截器 -->
 			<interceptor-ref name="fileUpload">
 				<param name="maximumSize">4096010</param>
-				<!-- 设置文件上传类型 26 <param name="allowedTypes"> 27 application/vnd.ms-powerpoint 28 </param> 29 -->
+				<!-- 设置文件上传类型 26 <param name="allowedTypes"> 27 application/vnd.ms-powerpoint 
+					28 </param> 29 -->
 			</interceptor-ref>
 			<interceptor-ref name="defaultStack"></interceptor-ref>
 		</action>
 
-<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+		<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 		<!-- 展示相关的action -->
 
 		<action name="displayAction_*" class="displayAction" method="{1}">
 			<result name="oneIterm">/WEB-INF/jsp/displayAction/oneIterm.jsp</result>
-			<result name="displayAll">/WEB-INF/jsp/displayAction/displayAll.jsp</result>
-			<result name="displayByCategory">/WEB-INF/jsp/displayAction/displayByCategory.jsp</result>
+			<result name="displayAll">/WEB-INF/jsp/displayAction/displayAll.jsp
+			</result>
+			<result name="displayByCategory">/WEB-INF/jsp/displayAction/displayByCategory.jsp
+			</result>
 		</action>
 
 	</package>
+	<package name="json" extends="json-default" namespace="/test">
+		<action name="testByAction"
+			class="testAction" method="JSONTest">
+			<result type="json">
+				<!-- 这里指定将被Struts2序列化的属性，该属性在action中必须有对应的getter方法 -->
+				<!-- 默认将会序列所有有返回值的getter方法的值，而无论该方法是否有对应属性 -->
+				<param name="root">dataMap</param>
+				<!-- 指定是否序列化空的属性 -->
+				<!-- <param name="excludeNullProperties">true</param> -->
+				<!-- 这里指定将序列化dataMap中的那些属性 -->
+				<!-- <param name="includeProperties"> userList.* </param> -->
+				<!-- 这里指定将要从dataMap中排除那些属性，这些排除的属性将不被序列化，一半不与上边的参数配置同时出现 -->
+				<!-- <param name="excludeProperties"> SUCCESS </param> -->
+			</result>
+		</action>
+	</package>
+
+
 
 </struts>

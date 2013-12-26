@@ -14,7 +14,6 @@
 
 
 
-<link href="${ }/css/bootstrap.css" rel="stylesheet">
 <style type="text/css">
 body {
 	padding-top: 60px;
