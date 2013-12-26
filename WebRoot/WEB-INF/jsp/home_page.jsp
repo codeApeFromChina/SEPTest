@@ -10,7 +10,7 @@
 	<div class="content">
 		<!-- Start: slider -->
 
-	
+
 
 		<div class="slider">
 			<div class="container-fluid">
