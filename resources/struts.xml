@@ -61,7 +61,8 @@
 
 		<action name="displayAction_*" class="displayAction" method="{1}">
 			<result name="oneIterm">/WEB-INF/jsp/displayAction/oneIterm.jsp</result>
-			<result name="displayAll">/WEB-INF/jsp/displayAction/b.jsp</result>
+			<result name="displayAll">/WEB-INF/jsp/displayAction/displayAll.jsp</result>
+			<result name="displayByCategory">/WEB-INF/jsp/displayAction/displayByCategory.jsp</result>
 		</action>
 
 	</package>

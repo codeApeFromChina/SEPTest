@@ -23,7 +23,6 @@
 		</div>
 
 		<div class="row-fluid">
-
 			<div class="span3">
 				<div class="well sidebar-nav" style="margin:10px">
 					<ul class="nav nav-list">
@@ -40,9 +39,13 @@
 
 			<div class="span9">
 
-				<!-- 				------------------------------------------------------------                             -->
 
 				<div class="row-fluid">
+					<s:iterator>
+
+
+					</s:iterator>
+
 					<s:iterator value="displayIterms" var="displayIterm" status="L">
 
 						<s:if test="(#L.index % 2) == 0">
@@ -63,42 +66,20 @@
 							<s:a cssClass="btn"
 								href="displayAction_showIterm.action?itermId=%{#displayIterm.id}">View details »</s:a>
 						</p>
-						<!--/span-->
 				</div>
+				<!--/span-->
 				</s:iterator>
-				<div class="pagination pagination-large " >
-				<ul style = "width:100%;">
-					<li><a href="#">Prev</a>
-					</li>
-					<li><a href="#">1</a>
-					</li>
-					<li><a href="#">2</a>
-					</li>
-					<li><a href="#">3</a>
-					</li>
-					<li><a href="#">4</a>
-					</li>
-					<li><a href="#">5</a>
-					</li>
-					
-					
-					<li><a href="#">Next</a>
-					</li>
-				</ul>
 			</div>
-
-			</div>
-
 			<!--/row-->
-			
 		</div>
 		<!--/span-->
-
-
 	</div>
 	<!--/row-->
 
 	<hr>
+
+	</div>
+
 
 	<!-- End: MAIN CONTENT -->
 

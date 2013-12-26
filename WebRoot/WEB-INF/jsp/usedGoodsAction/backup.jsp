@@ -1,292 +1,155 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib uri="/struts-tags" prefix="s"%>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<s:include value="basic_resource/header.jsp"></s:include>
+<body>
+	<!-- Start: MAIN CONTENT -->
+
+	<div class="container-fluid" style="
+    margin: 0 auto;
+    width: 80%;
+">
 		<div class="row-fluid">
-				<ul class="thumbnails">
-				
-						<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					
-					<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-				
-				
-					<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					
-					<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-				</ul>
+			<div class="span3">
+				<div class="well sidebar-nav">
+					<ul class="nav nav-list">
+						<li class="nav-header">Sidebar</li>
+						<li class="active"><a href="./g_files/g.html">Link</a>
+						</li>
+						<li><a href="./g_files/g.html">Link</a>
+						</li>
+						<li><a href="./g_files/g.html">Link</a>
+						</li>
+						<li><a href="./g_files/g.html">Link</a>
+						</li>
+						<li class="nav-header">Sidebar</li>
+						<li><a href="./g_files/g.html">Link</a>
+						</li>
+						<li><a href="./g_files/g.html">Link</a>
+						</li>
+						<li><a href="./g_files/g.html">Link</a>
+						</li>
+						<li><a href="./g_files/g.html">Link</a>
+						</li>
+						<li><a href="./g_files/g.html">Link</a>
+						</li>
+						<li><a href="./g_files/g.html">Link</a>
+						</li>
+						<li class="nav-header">Sidebar</li>
+						<li><a href="./g_files/g.html">Link</a>
+						</li>
+						<li><a href="./g_files/g.html">Link</a>
+						</li>
+						<li><a href="./g_files/g.html">Link</a>
+						</li>
+					</ul>
+				</div>
+				<!--/.well -->
 			</div>
-			
-			
-			<div class="row-fluid">
-				<ul class="thumbnails">
-					<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-				</ul>
+			<!--/span-->
+			<div class="span9">
+				<div class="hero-unit">
+					<h1>Hello, world!</h1>
+					<p>This is a template for a simple marketing or informational
+						website. It includes a large callout called the hero unit and
+						three supporting pieces of content. Use it as a starting point to
+						create something more unique.</p>
+					<p>
+						<a href="./g_files/g.html" class="btn btn-primary btn-large">Learn
+							more Â»</a>
+					</p>
+				</div>
+				<div class="row-fluid">
+					<div class="span4">
+						<h2>Heading</h2>
+						<p>Donec id elit non mi porta gravida at eget metus. Fusce
+							dapibus, tellus ac cursus commodo, tortor mauris condimentum
+							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+							malesuada magna mollis euismod. Donec sed odio dui.</p>
+						<p>
+							<a class="btn" href="./g_files/g.html">View details Â»</a>
+						</p>
+					</div>
+					<!--/span-->
+					<div class="span4">
+						<h2>Heading</h2>
+						<p>Donec id elit non mi porta gravida at eget metus. Fusce
+							dapibus, tellus ac cursus commodo, tortor mauris condimentum
+							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+							malesuada magna mollis euismod. Donec sed odio dui.</p>
+						<p>
+							<a class="btn" href="./g_files/g.html">View details Â»</a>
+						</p>
+					</div>
+					<!--/span-->
+					<div class="span4">
+						<h2>Heading</h2>
+						<p>Donec id elit non mi porta gravida at eget metus. Fusce
+							dapibus, tellus ac cursus commodo, tortor mauris condimentum
+							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+							malesuada magna mollis euismod. Donec sed odio dui.</p>
+						<p>
+							<a class="btn" href="./g_files/g.html">View details Â»</a>
+						</p>
+					</div>
+					<!--/span-->
+				</div>
+				<!--/row-->
+				<div class="row-fluid">
+					<div class="span4">
+						<h2>Heading</h2>
+						<p>Donec id elit non mi porta gravida at eget metus. Fusce
+							dapibus, tellus ac cursus commodo, tortor mauris condimentum
+							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+							malesuada magna mollis euismod. Donec sed odio dui.</p>
+						<p>
+							<a class="btn" href="./g_files/g.html">View details Â»</a>
+						</p>
+					</div>
+					<!--/span-->
+					<div class="span4">
+						<h2>Heading</h2>
+						<p>Donec id elit non mi porta gravida at eget metus. Fusce
+							dapibus, tellus ac cursus commodo, tortor mauris condimentum
+							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+							malesuada magna mollis euismod. Donec sed odio dui.</p>
+						<p>
+							<a class="btn" href="./g_files/g.html">View details Â»</a>
+						</p>
+					</div>
+					<!--/span-->
+					<div class="span4">
+						<h2>Heading</h2>
+						<p>Donec id elit non mi porta gravida at eget metus. Fusce
+							dapibus, tellus ac cursus commodo, tortor mauris condimentum
+							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+							malesuada magna mollis euismod. Donec sed odio dui.</p>
+						<p>
+							<a class="btn" href="./g_files/g.html">View details Â»</a>
+						</p>
+					</div>
+					<!--/span-->
+				</div>
+				<!--/row-->
 			</div>
-			<div class="row-fluid">
-				<ul class="thumbnails">
-					<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-					<li class="span3">
-						<div class="thumbnail">
-							<img src="img/placeholder-260x150.jpg" alt="product name">
-							<div class="caption">
-								<h3>Product name</h3>
-								<p>Few attractive words about your product.Few attractive
-									words about your product. Few attractive words about your
-									product.Few attractive words about your product.</p>
-							</div>
-							<div class="widget-footer">
-								<p>
-									<a href="#" class="btn btn-primary">Buy now</a>&nbsp; <a
-										href="product.html" class="btn">Read more</a>
-								</p>
-							</div>
-						</div>
-					</li>
-				</ul>
-			</div>
-			
+			<!--/span-->
+		</div>
+		<!--/row-->
+
+		<hr>
+
+		<footer>
+			<p>Â© Company 2013</p>
+		</footer>
+
+	</div>
+
+		
+	<!-- End: MAIN CONTENT -->
+
+	<s:include value="basic_resource/footer.jsp"></s:include>
+</body>
+</html>
