@@ -7,16 +7,25 @@
 
 	<!-- 配置为开发模式 -->
 	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
 	<!-- 配置扩展名为action -->
 	<!-- <constant name="struts.action.extension" value="action" /> -->
 
-<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
-	<package name="default" namespace="/" extends="struts-default">
+
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<package name="default" namespace="/" extends=" json-default">
 
 		<!-- 配置默认访问页 -->
 		<default-action-ref name="home_page" />
 
-<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+		<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<!-- json test -->
+		<action name="jsonTest" class="jsonTest" method="execute">
+
+			<result type="json">
+			</result>
+		</action>
+
 
 		<!-- d测试用的action，当与Spring整合后，class属性写的就是Spring中bean的名称 -->
 
@@ -24,7 +33,7 @@
 			<result name="success">/WEB-INF/jsp/contact_us.jsp</result>
 		</action>
 
-<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+		<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 		<!-- 测试modelDriven用的action -->
 
@@ -39,7 +48,7 @@
 			<result name="homePageUI">/WEB-INF/jsp/home_page.jsp</result>
 		</action>
 
-<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+		<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 		<!-- 产品相关的action -->
 
@@ -55,7 +64,7 @@
 			<interceptor-ref name="defaultStack"></interceptor-ref>
 		</action>
 
-<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  -->
+		<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 		<!-- 展示相关的action -->
 
@@ -64,7 +73,21 @@
 			<result name="displayAll">/WEB-INF/jsp/displayAction/displayAll.jsp</result>
 			<result name="displayByCategory">/WEB-INF/jsp/displayAction/displayByCategory.jsp</result>
 		</action>
+	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	
+		<!-- json 请求相关action -->
+		<action name="jsonAction_*" class = "jsonAction" method ="{1}">
+			<result name= "nextPage" type = "json">
+			</result>
+		
+		</action>
+<!-- 
+ 		<action name="jsonTest" class="jsonTest" method="execute">
 
+			<result type="json">
+			</result>
+		</action>
+ -->
 	</package>
 
 </struts>

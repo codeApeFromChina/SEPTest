@@ -20,7 +20,7 @@ public class DisplayAction extends BaseAction<UsedGood> {
 
 	private Long itermId;
 	private String requestType ;
-	private Integer limit_num = 12;
+	private Integer limit_num = 10;
 
 	
 	public String showIterm() {

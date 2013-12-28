@@ -27,21 +27,6 @@ public class UsedGood {
 //	private Image firstImage;
 	private Set<Image> images = new HashSet<Image>();
 	
-//	public UsedGood() {
-//		super();
-//	}
-//	public UsedGood(Long id, String name, Float price, String description,
-//			FirstImage firstImage) {
-//		super();
-//		this.id = id;
-//		this.name = name;
-//		this.price = price;
-//		this.description = description;
-//		this.firstImage = firstImage;
-//	}
-//	
-	
-	
 	public Long getId() {
 		return id;
 	}

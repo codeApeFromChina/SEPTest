@@ -5,103 +5,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <s:include value="../basic_resource/header.jsp"></s:include>
-<body>
-	<!-- Start: MAIN CONTENT -->
 
-	<div class="container-fluid content"
-		style="
+<!-- Start: MAIN CONTENT -->
+
+<div class="container-fluid content"
+	style="
     margin: 0 auto;
     width: 80%;
     ">
-		<div class="hero-unit">
-			<h1>**********</h1>
-			<p>============================</p>
+	<div class="hero-unit">
+		<h1>**********</h1>
+		<p>============================</p>
 
-			<p>
-				<a href="" class="btn btn-primary btn-large">Learn more »</a>
-			</p>
-		</div>
+		<p>
+			<a href="" class="btn btn-primary btn-large">Learn more »</a>
+		</p>
+	</div>
 
-		<div class="row-fluid">
+	<div class="row-fluid">
 
-			<div class="span3">
-				<div class="well sidebar-nav" style="margin:10px">
-					<ul class="nav nav-list">
-						<s:iterator value="#categoryMap" var="categoryIterm">
-							<li><a
-								href='<s:url value = "displayAction_displayByCategory.action?requestType=%{key}"></s:url>'>
-									<s:property value="value" /> </a></li>
-						</s:iterator>
-					</ul>
-				</div>
-				<!--/.well -->
-			</div>
-			<!--/span-->
-
-			<div class="span9">
-
-				<!-- 				------------------------------------------------------------                             -->
-
-				<div class="row-fluid">
-					<s:iterator value="displayIterms" var="displayIterm" status="L">
-
-						<s:if test="(#L.index % 2) == 0">
-
-							<div class="span5" style="margin : 20px;margin-left : 0">
-						</s:if>
-						<s:else>
-							<div class="span5" style="margin : 20px;">
-						</s:else>
-						<p></p>
-						<h2>
-							<s:property value="%{#displayIterm.name}" />
-						</h2>
-						<img src="<s:url value="/images/%{#displayIterm.imageName}"/>" />
-						<p>
-							<s:property value="#displayIterm.description" />
-						<p>
-							<s:a cssClass="btn"
-								href="displayAction_showIterm.action?itermId=%{#displayIterm.id}">View details »</s:a>
-						</p>
-						<!--/span-->
-				</div>
-				</s:iterator>
-				<div class="pagination pagination-large " >
-				<ul style = "width:100%;">
-					<li><a href="#">Prev</a>
-					</li>
-					<li><a href="#">1</a>
-					</li>
-					<li><a href="#">2</a>
-					</li>
-					<li><a href="#">3</a>
-					</li>
-					<li><a href="#">4</a>
-					</li>
-					<li><a href="#">5</a>
-					</li>
-					
-					
-					<li><a href="#">Next</a>
-					</li>
+		<div class="span3">
+			<div class="well sidebar-nav" style="margin:10px">
+				<ul class="nav nav-list">
+					<s:iterator value="#categoryMap" var="categoryIterm">
+						<li><a
+							href='<s:url value = "displayAction_displayByCategory.action?requestType=%{key}"></s:url>'>
+								<s:property value="value" /> </a>
+						</li>
+					</s:iterator>
 				</ul>
 			</div>
-
-			</div>
-
-			<!--/row-->
-			
+			<!--/.well -->
 		</div>
 		<!--/span-->
 
+		<div class="span9">
+
+			<!-- 				------------------------------------------------------------                             -->
+
+			<div class="row-fluid" id = "iterm-container">
+				<s:iterator value="displayIterms" var="displayIterm" status="L">
+
+					<s:if test="(#L.index % 2) == 0">
+
+						<div class="span5" style="margin : 20px;margin-left : 0">
+					</s:if>
+					<s:else>
+						<div class="span5" style="margin : 20px;">
+					</s:else>
+					<p></p>
+					<h2>
+						<s:property value="%{#displayIterm.name}" />
+					</h2>
+					<img src="<s:url value="/images/%{#displayIterm.imageName}"/>" />
+					<p>
+						<s:property value="#displayIterm.description" />
+					<p>
+						<s:a cssClass="btn"
+							href="displayAction_showIterm.action?itermId=%{#displayIterm.id}">View details »</s:a>
+					</p>
+					<!--/span-->
+			</div>
+			</s:iterator>
+
+		</div>
+
+		<!--/row-->
 
 	</div>
-	<!--/row-->
+	<!--/span-->
 
-	<hr>
 
-	<!-- End: MAIN CONTENT -->
+</div>
+<!--/row-->
 
-	<s:include value="../basic_resource/footer.jsp"></s:include>
+<hr>
+
+<!-- End: MAIN CONTENT -->
+
+<s:include value="../basic_resource/footer.jsp"></s:include>
+<script type="text/javascript" src = "${pageContext.request.contextPath}/js/request_json.js">
+</script>
 </body>
 </html>
