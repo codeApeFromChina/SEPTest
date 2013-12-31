@@ -23,7 +23,6 @@ public class DisplayServiceImp extends BaseServiceImp<UsedGood> implements
 	public List<DisplayIterm> findByCategory(int limit_num, String type,
 			String category) {
 		int start = 0;
-
 		sql = "select ug.id, ug.name, ug.description, ug.price, img.imageName from "
 				+ "usedGood ug join image img on img.usedGOodId = ug.id"
 				+ " where ug.type =:type and ug.detailedCategory =:category and img.imageType = 1 limit :limit_num";

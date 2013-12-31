@@ -13,6 +13,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.xinghen.base.BaseAction;
 import com.xinghen.base.BaseVar;
 import com.xinghen.domain.UsedGood;
+import com.xinghen.utils.UsedGoodHandler;
 
 @Controller
 @Scope("prototype")
@@ -35,10 +36,10 @@ public class DisplayAction extends BaseAction<UsedGood> {
 		System.out.println(requestType);
 		String[] tmp = requestType.split (":");
 		
-		String type = getType (tmp[0]);
+		String type = UsedGoodHandler.translateType(tmp[0]);
 //		String category = tmp[1];
 		
-		Map categoryMap = getCategory(type);
+		Map categoryMap = UsedGoodHandler.getCategoryList(type);
 		
 		ActionContext.getContext().put("categoryMap", categoryMap);
 		
@@ -52,55 +53,20 @@ public class DisplayAction extends BaseAction<UsedGood> {
 	public String displayByCategory (){
 		
 		String [] tmp = requestType.split(":");
-		String type = getType (tmp[0]);
+		String type = UsedGoodHandler.translateType(tmp[0]);
 		String category = tmp [1];
 		
-		Map categoryMap = getCategory(type);
+		Map categoryMap = UsedGoodHandler.getCategoryList(type);
+		
 		ActionContext.getContext().put("categoryMap", categoryMap);
 		
 		List displayIterms = displayService.findByCategory(limit_num, type, category);
 		ActionContext.getContext().put("displayIterms", displayIterms);
-
 		
 		return "displayByCategory";
 	}
 	
-	
 
-	// ------------------------------------
-	
-	public Map getCategory (String type ){
-		Map categoryMap = new HashMap<String, String>();
-		
-		
-		if (type.equals(USED_BOOK_TYPE)){
-			
-			categoryMap.putAll(BOOK_CATEGORY);
-		}
-		if (type.equals(USED_GOOD_TYPE)){
-			categoryMap.putAll(GOOD_CATEGORY);
-		}
-		return categoryMap;
-	}
-
-	
-	public String getType (String iType){
-		
-		String str1 = "B";
-		String str2 = "G";
-		
-		if (iType.equals (str1))
-			return BaseVar.USED_BOOK_TYPE;
-		
-		else if (iType.equals(str2))
-			return BaseVar.USED_GOOD_TYPE;
-		
-		return null;
-		
-	}
-	
-	//------------------------------------
-	
 	public String getRequestType() {
 		return requestType;
 	}

@@ -2,30 +2,31 @@
 $(document).ready(
 		
 		function() {
-			var i = 0;
+			var i = 1;
+			var requestType = $("#requestType").text();
 			$(window).scrollTop(0);
+			$(".chose-iterm").click(function(){
+				alert (this.attr("href"))
+				});
 			$(window).scroll(
 					function() {
-
-						
 
 						if ($(window).scrollTop() >= $(document).height()
 								- $(window).innerHeight() - 20) {
 							$.ajax({
-								url : "jsonAction_nextPage.action",
+								url : "jsonAction_nextPage.action?requestType=" + requestType + "&pageNum=" + i,
 								success : function(data) {
 									iterms = data.result.displayList;
 									var len = iterms.length;
+									if (len == 0)
 									for(var k = 0; k < len ; k ++){
 										diterm = iterms[k];
 										
-										var iterm = $("<div></div>").attr({
+										var iterm = $("<div></div>")
+										.attr({
 											"class":"span5",
 											"style":"margin:20px"
 										});
-										if (k % 2 ==0){
-											iterm.css("margin-left", "0px");
-										}
 										
 										iterm.append ($("<h2></h2>").text (diterm.name));
 										
@@ -35,7 +36,7 @@ $(document).ready(
 										
 										tmp.append ($("<a>View details »</a>").attr(
 												{
-													"href":"displayAction_showIterm.action?itermId=",
+													"href":"displayAction_showIterm.action?itermId="+diterm.id,
 													"class":"btn",
 													
 												}
@@ -43,8 +44,6 @@ $(document).ready(
 										iterm.append(tmp);
 									
 										$("#iterm-container").append (iterm);
-										/*
-										 */
 									} 
 									
 //									alert("success");
@@ -53,7 +52,6 @@ $(document).ready(
 							});
 
 							i++;
-
 						}
 					});
 

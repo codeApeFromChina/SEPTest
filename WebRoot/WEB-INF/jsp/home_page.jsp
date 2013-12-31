@@ -17,33 +17,18 @@
 				<div id="heroSlider" class="carousel slide">
 					<div class="carousel-inner">
 
-						<div class="active item">
-							<div class="hero-unit">
-								<div class="row-fluid">
-									<div class="span7 marketting-info">
-										<h1>
-											<s:property value="#sliderList[0].name" />
-										</h1>
-										<p>
-											<s:property value="#sliderList[0].description" />
-
-										</p>
-										<p>
-											<s:a
-												href="displayAction_showIterm.action?itermId=%{#sliderList[0].id}">..了解详情</s:a>
-										</p>
-									</div>
-									<div class="span5" style="height : 400px">
-										<img
-											src="<s:url value="/images/%{#sliderList[0].imageName}"/>" />
-									</div>
-								</div>
-							</div>
-						</div>
+						
 
 
-						<s:iterator value="#sliderList" var="sliderIterm">
-							<div class="item">
+						<s:iterator value="#sliderList" var="sliderIterm" status = "L">
+							<s:if test="(#L.index ) == 0">
+								<div class="item active">
+							</s:if>
+							<s:else>
+
+								<div class="item">
+							</s:else>
+							
 								<div class="hero-unit">
 									<div class="row-fluid">
 										<div class="span7 marketting-info">

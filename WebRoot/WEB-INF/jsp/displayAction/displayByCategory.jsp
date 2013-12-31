@@ -13,6 +13,9 @@
     margin: 0 auto;
     width: 80%;
     ">
+		<p id = "requestType" class = "hidden">
+			<s:property value="requestType" />
+		</p>
 		<div class="hero-unit">
 			<h1>**********</h1>
 			<p>============================</p>
@@ -34,7 +37,7 @@
 					</ul>
 				</div>
 				<!--/.well -->
-			</div>
+		</div>
 			<!--/span-->
 
 			<div class="span9">
@@ -51,9 +54,11 @@
 						<s:if test="(#L.index % 2) == 0">
 
 							<div class="span5" style="margin : 20px;margin-left : 0">
+						
 						</s:if>
 						<s:else>
 							<div class="span5" style="margin : 20px;">
+						
 						</s:else>
 						<p></p>
 						<h2>
@@ -62,10 +67,12 @@
 						<img src="<s:url value="/images/%{#displayIterm.imageName}"/>" />
 						<p>
 							<s:property value="#displayIterm.description" />
+						
 						<p>
 							<s:a cssClass="btn"
 								href="displayAction_showIterm.action?itermId=%{#displayIterm.id}">View details »</s:a>
 						</p>
+				
 				</div>
 				<!--/span-->
 				</s:iterator>
@@ -84,5 +91,9 @@
 	<!-- End: MAIN CONTENT -->
 
 	<s:include value="../basic_resource/footer.jsp"></s:include>
+	<script type="text/javascript"
+		src="${pageContext.request.contextPath}/js/request_json.js">
+		
+	</script>
 </body>
 </html>
