@@ -55,10 +55,6 @@ public class JsonAction {
 
 		System.out.println("nextPage : " + pageNum + " requestType : "
 				+ type);
-		if (tmp[1]!=null){
-			
-			
-		}
 		return "nextPage";
 	}
 
