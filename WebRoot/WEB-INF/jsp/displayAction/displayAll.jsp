@@ -13,7 +13,7 @@
     margin: 0 auto;
     width: 80%;
     ">
-   
+
 	<div class="hero-unit">
 		<h1>**********</h1>
 		<p>============================</p>
@@ -22,21 +22,22 @@
 			<a href="" class="btn btn-primary btn-large">Learn more »</a>
 		</p>
 	</div>
-	<p id = "requestType" class = "hidden">
-	 <s:property  value = "requestType"  />
+	<p id="requestType" class="hidden">
+		<s:property value="requestType" />
 	</p>
-	 
+
 
 	<div class="row-fluid">
 
 		<div class="span3">
 			<div class="well sidebar-nav" style="margin:10px">
 				<ul class="nav nav-list">
+					<li><a href="displayAction_displayAll?requestType=G:">查看全部</a>
+					</li>
 					<s:iterator value="#categoryMap" var="categoryIterm">
-						<li><a class = "chose-iterm"
+						<li><a class="chose-iterm"
 							href='<s:url value = "displayAction_displayByCategory.action?requestType=%{key}"></s:url>'>
-								<s:property value="value" /> </a>
-						</li>
+								<s:property value="value" /> </a></li>
 					</s:iterator>
 				</ul>
 			</div>
@@ -85,5 +86,5 @@
 		src="${pageContext.request.contextPath}/js/request_json.js">
 		
 	</script>
-</body>
+	</body>
 </html>

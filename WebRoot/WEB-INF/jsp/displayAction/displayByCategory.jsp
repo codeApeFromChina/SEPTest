@@ -13,7 +13,7 @@
     margin: 0 auto;
     width: 80%;
     ">
-		<p id = "requestType" class = "hidden">
+		<p id="requestType" class="hidden">
 			<s:property value="requestType" />
 		</p>
 		<div class="hero-unit">
@@ -29,6 +29,9 @@
 			<div class="span3">
 				<div class="well sidebar-nav" style="margin:10px">
 					<ul class="nav nav-list">
+						<li>
+						<a href="displayAction_displayAll?requestType=G:">查看全部</a>
+						</li>
 						<s:iterator value="#categoryMap" var="categoryIterm">
 							<li><a
 								href='<s:url value = "displayAction_displayByCategory.action?requestType=%{key}"></s:url>'>
@@ -37,53 +40,36 @@
 					</ul>
 				</div>
 				<!--/.well -->
-		</div>
+			</div>
 			<!--/span-->
 
 			<div class="span9">
 
 
-				<div class="row-fluid">
-					<s:iterator>
-
-
-					</s:iterator>
-
+				<div class="row-fluid" id="iterm-container">
 					<s:iterator value="displayIterms" var="displayIterm" status="L">
-
-						<s:if test="(#L.index % 2) == 0">
-
-							<div class="span5" style="margin : 20px;margin-left : 0">
-						
-						</s:if>
-						<s:else>
-							<div class="span5" style="margin : 20px;">
-						
-						</s:else>
-						<p></p>
-						<h2>
-							<s:property value="%{#displayIterm.name}" />
-						</h2>
-						<img src="<s:url value="/images/%{#displayIterm.imageName}"/>" />
-						<p>
-							<s:property value="#displayIterm.description" />
-						
-						<p>
-							<s:a cssClass="btn"
-								href="displayAction_showIterm.action?itermId=%{#displayIterm.id}">View details »</s:a>
-						</p>
-				
+						<div class="span5" style="margin : 20px;">
+							<h2>
+								<s:property value="%{#displayIterm.name}" />
+							</h2>
+							<img src="<s:url value="/images/%{#displayIterm.imageName}"/>" />
+							<p>
+								<s:property value="#displayIterm.description" />
+							<p>
+								<s:a cssClass="btn"
+									href="displayAction_showIterm.action?itermId=%{#displayIterm.id}">View details »</s:a>
+							</p>
+						</div>
+						<!--/span-->
+					</s:iterator>
 				</div>
-				<!--/span-->
-				</s:iterator>
+				<!--/row-->
 			</div>
-			<!--/row-->
+			<!--/span-->
 		</div>
-		<!--/span-->
-	</div>
-	<!--/row-->
+		<!--/row-->
 
-	<hr>
+		<hr>
 
 	</div>
 

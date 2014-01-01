@@ -3,10 +3,10 @@ $(document).ready(
 		
 		function() {
 			var i = 1;
-			var requestType = $("#requestType").text();
+			var requestType = $("#requestType").text().trim();
 			$(window).scrollTop(0);
 			$(".chose-iterm").click(function(){
-				alert (this.attr("href"))
+				
 				});
 			$(window).scroll(
 					function() {
@@ -14,11 +14,17 @@ $(document).ready(
 						if ($(window).scrollTop() >= $(document).height()
 								- $(window).innerHeight() - 20) {
 							$.ajax({
+								async: false,
 								url : "jsonAction_nextPage.action?requestType=" + requestType + "&pageNum=" + i,
 								success : function(data) {
+									
+									if (0 != data.result.displayList){
+									
 									iterms = data.result.displayList;
+									
 									var len = iterms.length;
-									if (len == 0)
+									
+										
 									for(var k = 0; k < len ; k ++){
 										diterm = iterms[k];
 										
@@ -46,6 +52,11 @@ $(document).ready(
 										$("#iterm-container").append (iterm);
 									} 
 									
+									}
+									else {
+//										alert("no result ~~");
+										$(window).unbind ("scroll");
+									}
 //									alert("success");
 								}
 

@@ -13,19 +13,17 @@ import com.xinghen.domain.DisplayIterm;
 import com.xinghen.service.JsonRequestService;
 import com.xinghen.utils.UsedGoodHandler;
 
-
-
 @Controller
 @Scope("prototype")
 public class JsonAction {
 
 	@Resource
-	private JsonRequestService jsonService;
+	private JsonRequestService jsonRequestService;
 
 	private Map<String, List<DisplayIterm>> result = new HashMap<String, List<DisplayIterm>>();
 	private String requestType;
-	private int nextPage;
-	private boolean hasNext;
+	private int pageNum;
+	private boolean hasNext = true;
 
 	private int limitNum = 10;
 
@@ -38,12 +36,12 @@ public class JsonAction {
 		if (hasNext == true) {
 
 			if (tmp.length == 1) {
-				displayList = jsonService.findNextPage(nextPage, limitNum,
+				displayList = jsonRequestService.findNextPage(pageNum, limitNum,
 						type, null);
 
 			} else if (tmp.length == 2) {
 
-				displayList = jsonService.findNextPage(nextPage, limitNum,
+				displayList = jsonRequestService.findNextPage(pageNum, limitNum,
 						type, tmp[1]);
 			}
 			if (displayList.size() < limitNum) {
@@ -52,9 +50,15 @@ public class JsonAction {
 			result.put("displayList", displayList);
 		}
 
-		
-		System.out.println("nextPage : " + nextPage + " requestType : "
-				+ requestType);
+		if (displayList != null)
+			System.out.println("list length is : " + displayList.size());
+
+		System.out.println("nextPage : " + pageNum + " requestType : "
+				+ type);
+		if (tmp[1]!=null){
+			
+			
+		}
 		return "nextPage";
 	}
 
@@ -64,12 +68,13 @@ public class JsonAction {
 		return result;
 	}
 
-	public int getNextPage() {
-		return nextPage;
+	
+	public int getPageNum() {
+		return pageNum;
 	}
 
-	public void setNextPage(int nextPage) {
-		this.nextPage = nextPage;
+	public void setPageNum(int pageNum) {
+		this.pageNum = pageNum;
 	}
 
 	public String getRequestType() {
