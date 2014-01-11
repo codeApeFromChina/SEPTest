@@ -1,8 +1,11 @@
 package com.xinghen.view.action;
 
+import java.util.Map;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.xinghen.domain.TestBean;
@@ -10,11 +13,17 @@ import com.xinghen.domain.TestBean;
 
 @Controller
 @Scope("prototype")
-public class TestAction extends ActionSupport implements ModelDriven<TestBean> {
+public class TestAction extends ActionSupport {
 	
 	private TestBean testBean = new TestBean();
 	
-	public String exec (){
+	private String username;
+	private String password;
+	private 
+	
+	public String login (){
+		Map session = ActionContext.getContext().getSession();
+		session.put("username", username );
 		
 		return "success";
 	}

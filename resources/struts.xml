@@ -73,11 +73,18 @@
 			<result name="displayAll">/WEB-INF/jsp/displayAction/displayAll.jsp</result>
 			<result name="displayByCategory">/WEB-INF/jsp/displayAction/displayByCategory.jsp</result>
 		</action>
+		
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	
 		<!-- json 请求相关action -->
 		<action name="jsonAction_*" class = "jsonAction" method ="{1}">
 			<result name= "nextPage" type = "json">
+			</result>
+		
+		</action>
+		
+		<action name="jsonTest_*" class = "testAction" method ="{1}">
+			<result name= "" type = "json">
 			</result>
 		
 		</action>
