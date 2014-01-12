@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <s:include value="basic_resource/header.jsp"></s:include>
-<body>
 	<!-- Start: MAIN CONTENT -->
 	<div class="content">
 		<!-- Start: slider -->

@@ -21,13 +21,6 @@ public class TestAction extends ActionSupport {
 	private String password;
 	private 
 	
-	public String login (){
-		Map session = ActionContext.getContext().getSession();
-		session.put("username", username );
-		
-		return "success";
-	}
-	
 	String test (){
 		System.out.println(testBean.getName());
 		System.out.println(testBean.getPrice());

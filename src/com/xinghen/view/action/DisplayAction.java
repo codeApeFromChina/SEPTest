@@ -23,6 +23,12 @@ public class DisplayAction extends BaseAction<UsedGood> {
 	private String requestType ;
 	private Integer limit_num = 10;
 
+	public String testT(){
+		System.out.println("=========================================>>>>>>>>>>>>>>>>>>>>>>>>>>..");
+
+		return "testt";
+	}
+	
 	
 	public String showIterm() {
 		UsedGood usedGood = displayService.getById(itermId);
