@@ -66,8 +66,8 @@ public class GoodAction extends BaseAction<UsedGood> {
 		MyIOUtils.getInstance().inputImage(path, imageList, imagesName,
 				usedGood);
 
-		User tUser = new User();
-		tUser.setId(1l);
+		User tUser = (User) ActionContext.getContext().getSession().get("user");
+		
 		usedGood.setUser(tUser);
 		usedGoodService.save(usedGood);
 

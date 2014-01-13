@@ -12,6 +12,14 @@ import com.xinghen.service.UsedGoodService;
 @Service
 public class UsedGoodServiceImp extends BaseServiceImp<UsedGood> implements UsedGoodService {
 
+	public List findAllById(Long id) {
+		
+		
+		
+		
+		return null;
+	}
+
 	
 	
 }

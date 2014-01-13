@@ -10,6 +10,8 @@ import com.xinghen.service.DisplayService;
 import com.xinghen.service.ImageService;
 import com.xinghen.service.IndexService;
 import com.xinghen.service.UsedGoodService;
+import com.xinghen.service.UserSystemService;
+import com.xinghen.view.action.UserSystemAction;
 
 public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
 
@@ -21,6 +23,9 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
 	protected DisplayService displayService;
 	@Resource
 	protected ImageService imageService;
+	
+	@Resource
+	protected UserSystemService userSystemService;
 	
 	protected T model;
 

@@ -50,7 +50,6 @@ public class BaseServiceImp<T> implements BaseService<T> {
 						"from " + clazz.getSimpleName() + "where id in (:ids)")
 				.setParameterList("ids", ids).list();
 	}
-
 	public List<T> findAll() {
 
 		return getSession().createQuery("from" + clazz.getSimpleName()).list();

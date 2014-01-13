@@ -24,32 +24,32 @@
 						<tr>
 							<td>您的名字：</td>
 							<td>
-								<s:password name = "name" ></s:password>
+								<s:textfield name = "name" value = "小白"></s:textfield>
 							</td>
 						</tr>
 						<tr>
 							<td>您的电话号码：</td>
 							<td>
-								<s:textfield name = "phoneNumber" ></s:textfield>
+								<s:textfield name = "phoneNumber" value = "12345678901"></s:textfield>
 							</td>
 						</tr>
 						<tr>
 							<td>您的e-mail：</td>
 							<td>
-								<s:textfield name = "email" ></s:textfield>
+								<s:textfield name = "email" value = "xxx@aaa.com" ></s:textfield>
 							</td>
 						</tr>
 						<tr>
 							<td>您的学校：</td>
 							<td>
-								<s:textfield name = "schoolName" ></s:textfield>
+								<s:textfield name = "schoolName" value = "MIT"></s:textfield>
 							</td>
 						</tr>
 						
 						<tr>
 							<td>所在地：</td>
 							<td>
-								<s:textfield name = "name" ></s:textfield>
+								<s:textfield name = "location" value = "Heaven" ></s:textfield>
 							</td>
 						</tr>
 						
@@ -57,13 +57,13 @@
 						<tr>
 							<td>用户名：</td>
 							<td>
-								<s:textfield name = "userName"></s:textfield>
+								<s:textfield name = "userName" value = "polarBear"></s:textfield>
 							</td>
 						</tr>
 						<tr>
 							<td>密码：</td>
 							<td>
-								<s:password name = "passWord" ></s:password>
+								<s:password name = "passWord" value = "123456"></s:password>
 							</td>
 						</tr>
 						

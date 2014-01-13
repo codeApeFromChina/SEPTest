@@ -2,18 +2,11 @@ package com.xinghen.service.imp;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
-import old_codes.UsedGoodDao;
-
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.transform.Transformers;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.xinghen.base.BaseServiceImp;
 import com.xinghen.domain.DisplayIterm;
@@ -44,6 +37,7 @@ public class IndexServiceImp extends BaseServiceImp<UsedGood> implements
 
 		query.setParameter("limit_num", limit_num);
 		query.setParameter("type", type);
+		
 		query.setResultTransformer(Transformers.aliasToBean(DisplayIterm.class));
 
 		List<DisplayIterm> displayItermList = query.list();

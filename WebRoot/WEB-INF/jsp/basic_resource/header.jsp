@@ -1,3 +1,4 @@
+<%@taglib uri="/struts-tags" prefix="s"%>
 
 <%@ page pageEncoding="UTF-8"%>
 <head>
@@ -31,7 +32,7 @@
 		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
 				<div class="container">
-					<a href="" class="brand brand-bootbus">second-hand transaction</a>
+					<a href="indexAction_homePageUI.action" class="brand brand-bootbus">second-hand transaction</a>
 					<!-- Below button used for responsive navigation -->
 					<button type="button" class="btn btn-navbar" data-toggle="collapse"
 						data-target=".nav-collapse">
@@ -62,7 +63,7 @@
 							<li class="dropdown"><a href="#" class="dropdown-toggle"
 								data-toggle="dropdown">城市-青岛<b class="caret"></b> </a>
 								<ul class="dropdown-menu">
-
+		
 									<!-- 学校选择 -->
 									<li class="nav-header">LOCATIONS</li>
 									<li><a href="">青岛大学</a></li>
@@ -82,9 +83,42 @@
                     <li><a href="all_services.html">All services</a></li>
                      -->
 								</ul>
-							</li>
-							<li><a id="login-butn" href="userSystem_loginUI.action"  >登录
-							</a> <!-- 
+							
+								
+							<s:if test = " null ==#session.user">
+								<li>	
+									<a id="login-butn" href="userSystem_loginUI.action"  >
+										登录
+									</a> 
+								</li>
+								<li>
+									<a id="addGood-butn" href="goodAction_saveUI.action"  >发布二手商品</a>
+								</li>
+							</s:if>
+							
+							<s:else>
+								<li>
+									<a id="logout-butn" href="/////////////////////"  >
+										发布商品管理
+									</a> 
+								</li>
+								
+								<li>
+									<a id="logout-butn" href="userSystem_logout.action"  >
+										注销
+									</a> 
+								</li>
+								
+								
+								<li>
+									<h4 style = "color : #fff">
+										欢迎 <s:property value = "#session.user.userName"/>
+									</h4>
+								</li>
+							
+							</s:else>
+							
+				<!-- 
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
                   <ul class="dropdown-menu">

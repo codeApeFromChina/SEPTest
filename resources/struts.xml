@@ -15,14 +15,31 @@
 	<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 	<package name="default" namespace="/" extends=" json-default">
 
+<interceptors>
+		
+			<!--声明一个权限验证的拦截器 -->
+
+			<interceptor name="checkPrivilege" class="com.xinghen.interceptor.PrivilegeCheckInterceptor"></interceptor>
+			
+			<!--重新定义defaultStack拦截器栈，需要先执行自己定义的权限验证拦截器 -->
+			
+			<interceptor-stack name="defaultStack" >
+				<interceptor-ref name="checkPrivilege"/>
+				<interceptor-ref name="defaultStack"/>
+			</interceptor-stack>
+		</interceptors>
+
+
 		<!-- 配置默认访问页 -->
 		<default-action-ref name="home_page" />
 
 
 		<global-results>
 			<result name = "loginUI">/WEB-INF/jsp/user_system/loginUI.jsp</result>
+			<result name = "noPrivilegeError">/WEB-INF/jsp/user_system/noPrivilegeErrorUI.jsp</result>
 		</global-results>
 
+		
 
 		<!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 		<!-- json test -->
@@ -33,9 +50,11 @@
 		</action>
 		
 		<action name="userSystem_*" class="userSystemAction" method ="{1}" >
-			<result name = "{1}" type = "redirectAction">home_page</result>
+			<result name = "login" type = "redirectAction">home_page</result>
+			<result name = "logoutUI">/WEB-INF/jsp/user_system/logoutUI.jsp</result>
 			<result name = "signUpUI" >/WEB-INF/jsp/user_system/{1}.jsp</result>
 			<result name = "signUp" >/WEB-INF/jsp/user_system/{1}.jsp</result>
+			<result name = "managementUI" >/WEB-INF/jsp/user_system/{1}.jsp</result>
 			
 		</action>
 

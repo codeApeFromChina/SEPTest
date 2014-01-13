@@ -10,54 +10,33 @@
     <div class="content">
       <div class="container">
         <div class="page-header">
-          <h1>登录</h1>
+          <h1</h1>
         </div>
         <div class="row">
           <div class="span6 offset3">
-            <h4 class="widget-header"><i class="icon-lock"></i>登录到校园二手交易平台</h4>
+            <h4 class="widget-header"><i class="icon-lock"></i>校园二手交易平台</h4>
             <div class="widget-body">
               <div class="center-align">
-                
-                
-                <s:form cssClass="form-horizontal form-signin-signup" theme="simple" 
-                	method = "post" enctype="multipart/form-data" action = "userSystem_login.action">
-					<table class = "table well">
-						<tr>
-							<td style = "color: red">
-								<s:property  value = "#inputError"/>
-							</td>
-						</tr>
-						<tr>
-							<td>用户名：</td>
-							<td>
-								<s:textfield name = "userName"></s:textfield>
-							</td>
-						</tr>
-						<tr>
-							<td>密码：</td>
-							<td>
-								<s:password name = "passWord" type = "password"></s:password>
-							</td>
-						</tr>
-					</table>
-                  <div class="remember-me">
-                    <div class="pull-left">
-				<!-- 
-                      <label class="checkbox">
-                        <input type="checkbox"> Remember me
-                      </label>
-				 -->
-                    </div>
-                    <div class="pull-right">
-                      <a href="#">忘记密码？</a>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                  <s:submit  value=" submit " value = "登录" cssClass ="btn btn-primary btn-large" ></s:submit>
-                </s:form>
-                
-                <h4><i class="icon-question-sign"></i> Don't have an account?</h4>
-                <a href="userSystem_signUpUI.action" class="btn btn-large bottom-space">注册</a>
+               
+				<p>
+					您暂时没有权限发布商品
+				</p>
+				
+				<p>
+					老用户：
+					<a id="login-butn" href="userSystem_loginUI.action">登录</a> 
+				</p>
+				               
+				<p>
+					新用户：
+					<a id="signin-butn" href="userSystem_signinUI.action">注册</a> 
+				</p>
+				<p>
+					继续浏览：
+					<a id="homePage-butn" href="indexAction_homePageUI">返回首页</a> 
+				</p>
+				
+
               <!-- 
                 <h4><i class="icon-thumbs-up"></i> Sign in with third party account</h4>
                 <ul class="signin-with-list">
