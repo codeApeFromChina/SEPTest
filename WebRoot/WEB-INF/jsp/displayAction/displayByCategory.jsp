@@ -7,8 +7,9 @@
 <s:include value="../basic_resource/header.jsp"></s:include>
 <body>
 	<!-- Start: MAIN CONTENT -->
-
-	<div class="container-fluid content"
+<div class="content">
+	<div class="container">
+	<div class="container-fluid well"
 		style="
     margin: 0 auto;
     width: 80%;
@@ -71,6 +72,8 @@
 
 		<hr>
 
+	</div>
+	</div>
 	</div>
 
 

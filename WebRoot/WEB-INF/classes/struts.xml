@@ -54,7 +54,8 @@
 			<result name = "logoutUI">/WEB-INF/jsp/user_system/logoutUI.jsp</result>
 			<result name = "signUpUI" >/WEB-INF/jsp/user_system/{1}.jsp</result>
 			<result name = "signUp" >/WEB-INF/jsp/user_system/{1}.jsp</result>
-			<result name = "managementUI" >/WEB-INF/jsp/user_system/{1}.jsp</result>
+			<result name = "managementUI" >/WEB-INF/jsp/user_system/managementUI.jsp</result>
+			<result name = "deleted" type = "redirectAction" >userSystem_managementUI</result>
 			
 		</action>
 

@@ -85,7 +85,7 @@
 								</ul>
 							
 								
-							<s:if test = " null ==#session.user">
+							<s:if test = " null == #session.user">
 								<li>	
 									<a id="login-butn" href="userSystem_loginUI.action"  >
 										登录
@@ -98,7 +98,7 @@
 							
 							<s:else>
 								<li>
-									<a id="logout-butn" href="/////////////////////"  >
+									<a id="logout-butn" href="userSystem_managementUI.action"  >
 										发布商品管理
 									</a> 
 								</li>

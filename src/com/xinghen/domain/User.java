@@ -1,10 +1,13 @@
 package com.xinghen.domain;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
 public class User {
+	
+	
 	private Long id;
 	private String name;
 	private String age;
@@ -19,6 +22,12 @@ public class User {
 	private Set<UsedGood> usedGoods = new HashSet<UsedGood>();
 
 	// private Set<User> friends = new HashSet<User>();
+	
+	public User (){
+		
+	}
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -114,5 +123,8 @@ public class User {
 	public void setUsedGoods(Set<UsedGood> usedGoods) {
 		this.usedGoods = usedGoods;
 	}
+	
+	
+	
 
 }

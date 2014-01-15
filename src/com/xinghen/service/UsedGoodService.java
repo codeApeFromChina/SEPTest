@@ -7,5 +7,5 @@ import com.xinghen.domain.UsedGood;
 
 public interface UsedGoodService extends BaseService<UsedGood> {
 	
-	List findAllById (Long id);
+	List findAllByUserId (Long id);
 }

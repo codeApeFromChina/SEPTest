@@ -10,16 +10,15 @@ import com.xinghen.domain.UsedGood;
 import com.xinghen.service.UsedGoodService;
 
 @Service
-public class UsedGoodServiceImp extends BaseServiceImp<UsedGood> implements UsedGoodService {
+@SuppressWarnings("unchecked")
+public class UsedGoodServiceImp extends BaseServiceImp<UsedGood> implements
+		UsedGoodService {
 
-	public List findAllById(Long id) {
-		
-		
-		
-		
-		return null;
+	public List<UsedGood> findAllByUserId(Long id) {
+		return getSession()
+				.createQuery(
+						"from UsedGood g where g.user.id = :userId")
+				.setParameter("userId", id)//
+				.list();
 	}
-
-	
-	
 }

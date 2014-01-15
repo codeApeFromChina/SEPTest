@@ -12,12 +12,7 @@ public class UsedGood {
 	private String type;
 	private Float price;
 	private String detailedCategory;
-	public String getDetailedCategory() {
-		return detailedCategory;
-	}
-	public void setDetailedCategory(String detailedCategory) {
-		this.detailedCategory = detailedCategory;
-	}
+	
 	private String tradeType;
 	private String description;
 	private String tradeLocation;
@@ -25,6 +20,14 @@ public class UsedGood {
 	private User user = new User();
 	
 //	private Image firstImage;
+	
+	public String getDetailedCategory() {
+		return detailedCategory;
+	}
+	public void setDetailedCategory(String detailedCategory) {
+		this.detailedCategory = detailedCategory;
+	}
+	
 	private Set<Image> images = new HashSet<Image>();
 	
 	public Long getId() {

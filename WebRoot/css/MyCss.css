@@ -14,3 +14,7 @@
 	white-space : nowrap;
 	color : #555555;
 }
+
+.content .container{
+	min-height: 700px;
+}

@@ -9,12 +9,15 @@ import org.springframework.stereotype.Controller;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.xinghen.base.BaseAction;
+import com.xinghen.domain.UsedGood;
 import com.xinghen.domain.User;
 
 @Controller
 @Scope("prototype")
 public class UserSystemAction extends BaseAction<User> {
-
+	
+	Long usedGoodId;
+	
 	public String loginUI() throws Exception {
 
 		return "loginUI";
@@ -65,15 +68,38 @@ public class UserSystemAction extends BaseAction<User> {
 		return "signUp";
 	}
 	
+	public String deleteById() throws Exception {
+		
+
+		System.out.println(usedGoodId);
+		usedGoodService.deletById(usedGoodId);
+		
+		return "deleted";
+	}
+	
 	public String managementUI()
 	{
-//		List usedGoodList = usedGoodService.findAll();
+		ActionContext ac = ActionContext.getContext();
 		
+		User user = (User) ac.getSession().get("user");
+		
+		List usedGoodList = usedGoodService.findAllByUserId(user.getId());
+
+		ac.put("displayIterms", usedGoodList);
+		
+		System.out.println("managementUI -----_------>>>>.");
 		
 		return "managementUI";
 	}
 
+	//---------------------------------
 	
-	
+	public Long getUsedGoodId() {
+		return usedGoodId;
+	}
+
+	public void setUsedGoodId(Long usedGoodId) {
+		this.usedGoodId = usedGoodId;
+	}
 
 }

@@ -4,6 +4,7 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.AbstractInterceptor;
 import com.xinghen.domain.User;
+import com.xinghen.utils.UserUtils;
 
 
 public class PrivilegeCheckInterceptor extends AbstractInterceptor   {
@@ -29,7 +30,7 @@ public class PrivilegeCheckInterceptor extends AbstractInterceptor   {
 		
 		System.out.println(url + "===============>>>>>>>>>>..");
 		
-		if (user == null && ("/goodAction_saveUI").equals(url))
+		if (user == null && UserUtils.hasNoPrivilege(url))
 		{
 			return "noPrivilegeError";
 		}
