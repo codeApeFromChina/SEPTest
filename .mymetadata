@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="sshDemo"
+  name="SEPTest"
   id="myeclipse.1385553908607"
   context-root="/sshDemo"
   j2ee-spec="5.0"
-  archive="sshDemo.war">
+  archive="SEPTest.war">
   <attributes>
     <attribute name="webrootdir" value="WebRoot" />
   </attributes>
